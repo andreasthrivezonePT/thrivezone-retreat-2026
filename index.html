@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThriveZone Retreat Mallorca 2026</title>
+  <style>
+    :root {
+      --dark: #162633;
+      --mid: #1e3a4a;
+      --sand: #f4ede3;
+      --sand-card: #ede4d8;
+      --ocean: #2a7fa5;
+      --accent: #e05c20;
+      --accent2: #f0a500;
+      --light: #f4ede3;
+      --white: #ffffff;
+      --gray: #8a9ba8;
+      --text-dark: #1a2e3a;
+      --text-mid: #3a5060;
+      --section-pad: 90px 24px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ── LANGUAGE TOGGLE ─────────────────────────────── */
+    .lang-bar {
+      position: fixed; top: 0; right: 0; left: 0;
+      z-index: 1000;
+      display: flex; justify-content: flex-end; align-items: center;
+      padding: 12px 28px;
+      background: rgba(15,25,35,0.92);
+      backdrop-filter: blur(8px);
+    }
+    .lang-btn {
+      background: none; border: 1px solid rgba(255,255,255,0.3);
+      color: var(--white); font-size: 13px; font-weight: 600;
+      letter-spacing: 1px; padding: 6px 16px; border-radius: 20px;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .lang-btn:hover { background: var(--accent); border-color: var(--accent); }
+    .lang-btn.active { background: var(--accent); border-color: var(--accent); }
+
+    [lang-de], [lang-en] { display: none; }
+    body.de [lang-de] { display: revert; }
+    body.en [lang-en] { display: revert; }
+
+    /* ── HERO ────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center;
+      padding: 100px 24px 60px;
+      background:
+        linear-gradient(to bottom, rgba(15,25,35,0.55) 0%, rgba(15,25,35,0.85) 100%),
+        url('./images/villa_pool_aerial.jpg') center top/cover no-repeat;
+      position: relative;
+    }
+    .hero-eyebrow {
+      font-size: 13px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--accent); font-weight: 700; margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 88px);
+      font-weight: 900; line-height: 1.0;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+    .hero h1 em {
+      font-style: normal; color: var(--accent2);
+    }
+    .hero-sub {
+      font-size: clamp(16px, 3vw, 22px);
+      color: rgba(255,255,255,0.7);
+      margin: 20px auto 0;
+      max-width: 600px;
+      font-weight: 300;
+    }
+    .hero-meta {
+      margin-top: 44px;
+      display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
+    }
+    .hero-meta-item {
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .hero-meta-item span:first-child {
+      font-size: 26px; font-weight: 800; color: var(--accent2);
+    }
+    .hero-meta-item span:last-child {
+      font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gray);
+    }
+    .hero-cta {
+      margin-top: 52px;
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+    }
+    .btn {
+      padding: 16px 36px; border-radius: 4px; font-size: 14px;
+      font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      cursor: pointer; text-decoration: none; transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-primary {
+      background: var(--accent); color: var(--white); border: 2px solid var(--accent);
+    }
+    .btn-primary:hover { background: #d04d1a; border-color: #d04d1a; transform: translateY(-2px); }
+    .btn-secondary {
+      background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.4);
+    }
+    .btn-secondary:hover { border-color: var(--white); transform: translateY(-2px); }
+
+    .hero-scroll {
+      margin-top: 60px;
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gray); display: flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .hero-scroll::after {
+      content: ''; width: 1px; height: 48px;
+      background: linear-gradient(to bottom, var(--gray), transparent);
+    }
+
+    /* ── SECTION BASICS ──────────────────────────────── */
+    section { padding: var(--section-pad); }
+    .container { max-width: 1060px; margin: 0 auto; }
+    .section-label {
+      font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--accent); font-weight: 700; margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(28px, 5vw, 46px); font-weight: 900;
+      line-height: 1.1; margin-bottom: 20px;
+    }
+    .section-title em { font-style: normal; color: var(--accent2); }
+    .section-body {
+      font-size: 17px; color: rgba(255,255,255,0.7);
+      max-width: 680px; line-height: 1.8;
+    }
+
+    /* ── QUOTE BANNER ────────────────────────────────── */
+    .quote-banner {
+      background: var(--mid);
+      padding: 72px 24px; text-align: center;
+    }
+    .quote-banner blockquote {
+      font-size: clamp(20px, 4vw, 36px);
+      font-weight: 300; font-style: italic;
+      color: rgba(255,255,255,0.85);
+      max-width: 800px; margin: 0 auto;
+      line-height: 1.5;
+    }
+    .quote-banner blockquote::before { content: '\201C'; color: var(--accent); font-size: 1.4em; }
+    .quote-banner blockquote::after  { content: '\201D'; color: var(--accent); font-size: 1.4em; }
+
+    /* ── PILLARS ─────────────────────────────────────── */
+    .pillars { background: var(--sand); }
+    .pillars .section-label { color: var(--accent); }
+    .pillars .section-title { color: var(--text-dark); }
+    .pillars .section-title em { color: var(--accent); }
+    .pillars .section-body { color: var(--text-mid); }
+    .pillars-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px; margin-top: 56px;
+    }
+    .pillar-card {
+      background: var(--sand-card); border-radius: 8px;
+      padding: 36px 28px; border-top: 3px solid var(--accent);
+      transition: transform 0.2s;
+    }
+    .pillar-card:hover { transform: translateY(-4px); }
+    .pillar-icon { font-size: 32px; margin-bottom: 16px; }
+    .pillar-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; color: var(--text-dark); }
+    .pillar-card p { font-size: 15px; color: var(--text-mid); line-height: 1.7; }
+
+    /* ── DAY SCHEDULE ────────────────────────────────── */
+    .schedule { background: var(--sand); }
+    .schedule .section-label { color: var(--accent); }
+    .schedule .section-title { color: var(--text-dark); }
+    .schedule .section-title em { color: var(--accent); }
+    .schedule .section-body { color: var(--text-mid); }
+    .schedule .schedule-time { color: var(--ocean); }
+    .schedule .schedule-content h4 { color: var(--text-dark); }
+    .schedule .schedule-content p { color: var(--text-mid); }
+    .schedule-list {
+      margin-top: 52px;
+      display: flex; flex-direction: column; gap: 0;
+    }
+    .schedule-item {
+      display: flex; align-items: flex-start; gap: 24px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(26,46,58,0.10);
+    }
+    .schedule-item:last-child { border-bottom: none; }
+    .schedule-time {
+      font-size: 13px; font-weight: 700; color: var(--ocean);
+      letter-spacing: 1px; min-width: 72px; padding-top: 2px;
+    }
+    .schedule-content h4 { font-size: 16px; font-weight: 700; margin-bottom: 4px; color: var(--text-dark); }
+    .schedule-content p { font-size: 14px; color: var(--text-mid); }
+
+    /* ── LOCATION ────────────────────────────────────── */
+    .location { background: var(--dark); }
+    .location-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; margin-top: 52px; align-items: center;
+    }
+    .location-features {
+      display: flex; flex-direction: column; gap: 16px; margin-top: 32px;
+    }
+    .location-feat {
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .location-feat-icon {
+      width: 36px; height: 36px; background: rgba(232,93,38,0.15);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
+    }
+    .location-feat-text h4 { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+    .location-feat-text p  { font-size: 14px; color: rgba(255,255,255,0.55); }
+    .location-image {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 8px;
+      border-radius: 12px; overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .location-image img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .location-image img:hover { transform: scale(1.04); }
+    .location-image img:first-child {
+      grid-row: 1 / 3;
+      border-radius: 10px 0 0 10px;
+    }
+    .location-image img:nth-child(2) { border-radius: 0 10px 0 0; }
+    .location-image img:nth-child(3) { border-radius: 0 0 10px 0; }
+
+    /* ── TEAM ────────────────────────────────────────── */
+    .team { background: var(--sand); }
+    .team .section-label { color: var(--accent); }
+    .team .section-title { color: var(--text-dark); }
+    .team .section-title em { color: var(--accent); }
+    .team-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px; margin-top: 52px;
+    }
+    .team-card {
+      background: var(--white); border-radius: 12px; overflow: hidden;
+      box-shadow: 0 4px 24px rgba(26,46,58,0.10);
+    }
+    .team-card-header {
+      height: 220px; overflow: hidden; position: relative;
+      background: var(--mid);
+    }
+    .team-card-header img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
+    }
+    .team-card-header::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 4px; background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+    .team-card-body { padding: 28px 28px; }
+    .team-name { font-size: 22px; font-weight: 900; margin-bottom: 4px; color: var(--text-dark); }
+    .team-role { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+    .team-desc { font-size: 15px; color: var(--text-mid); line-height: 1.7; }
+
+    /* ── INCLUDED ────────────────────────────────────── */
+    .included { background: var(--dark); }
+    .included-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px; margin-top: 52px;
+    }
+    .included-item {
+      display: flex; gap: 14px; align-items: center;
+      background: var(--mid); border-radius: 8px; padding: 18px 20px;
+    }
+    .included-check {
+      width: 28px; height: 28px; background: rgba(232,93,38,0.2);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-weight: 900; font-size: 13px; flex-shrink: 0;
+    }
+    .included-item span { font-size: 15px; font-weight: 500; }
+
+    /* ── PRICING ─────────────────────────────────────── */
+    .pricing { background: var(--mid); text-align: center; }
+    .pricing-cards {
+      display: flex; gap: 28px; justify-content: center;
+      flex-wrap: wrap; margin-top: 52px;
+    }
+    .price-card {
+      background: var(--dark); border-radius: 12px; padding: 44px 40px;
+      min-width: 260px; border: 2px solid rgba(255,255,255,0.08);
+      position: relative; transition: transform 0.2s;
+    }
+    .price-card:hover { transform: translateY(-4px); }
+    .price-card.featured {
+      border-color: var(--accent);
+    }
+    .price-badge {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--accent); color: var(--white);
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; padding: 5px 18px; border-radius: 20px;
+    }
+    .price-type { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); margin-bottom: 16px; }
+    .price-amount { font-size: 52px; font-weight: 900; color: var(--white); line-height: 1; }
+    .price-amount span { font-size: 22px; font-weight: 400; color: var(--gray); }
+    .price-note { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 8px; }
+    .price-features {
+      list-style: none; margin-top: 28px; text-align: left;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .price-features li { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; gap: 10px; }
+    .price-features li::before { content: '✓'; color: var(--accent); font-weight: 900; }
+
+    /* ── ADD-ONS ─────────────────────────────────────── */
+    .addons { background: var(--dark); }
+    .addons-list {
+      display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px;
+    }
+    .addon-tag {
+      background: var(--mid); border-radius: 6px;
+      padding: 10px 18px; font-size: 14px;
+      color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.1);
+    }
+    .addon-tag em { font-style: normal; color: var(--accent2); margin-left: 8px; }
+
+    /* ── CTA ─────────────────────────────────────────── */
+    .cta-section {
+      background:
+        linear-gradient(to bottom, rgba(15,25,35,0.75), rgba(15,25,35,0.92)),
+        url('./images/yoga_outdoor.jpg') center/cover;
+      padding: var(--section-pad);
+      text-align: center;
+    }
+    .cta-section .section-title { max-width: 700px; margin: 0 auto 20px; }
+    .cta-section .section-body { margin: 0 auto 40px; }
+    .cta-contact {
+      margin-top: 40px; font-size: 15px; color: rgba(255,255,255,0.5);
+    }
+    .cta-contact a { color: var(--accent2); text-decoration: none; font-weight: 700; }
+
+    /* ── FOOTER ──────────────────────────────────────── */
+    footer {
+      background: #060d13;
+      padding: 36px 24px; text-align: center;
+      font-size: 13px; color: rgba(255,255,255,0.3);
+    }
+    footer strong { color: rgba(255,255,255,0.6); }
+
+    /* ── URGENCY BAR ─────────────────────────────────── */
+    .urgency-bar {
+      background: var(--accent);
+      padding: 12px 24px; text-align: center;
+      font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
+    }
+
+    /* ── RHYTHM ──────────────────────────────────────── */
+    .rhythm { background: var(--dark); padding: var(--section-pad); }
+    .rhythm-arc {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 8px; margin-top: 52px;
+    }
+    .rhythm-step {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 10px; background: var(--mid); border-radius: 14px;
+      padding: 24px 18px; min-width: 100px; text-align: center;
+      flex: 1; max-width: 150px; transition: transform 0.3s ease;
+    }
+    .rhythm-step:hover { transform: translateY(-4px); }
+    .rhythm-step-accent { border-top: 3px solid var(--accent); }
+    .rhythm-step-glow  { border-top: 3px solid var(--accent2); }
+    .rhythm-icon { font-size: 30px; }
+    .rhythm-label { font-size: 13px; font-weight: 700; line-height: 1.5; }
+    .rhythm-label small { display: block; font-weight: 400; color: var(--gray); font-size: 11px; }
+    .rhythm-arrow { color: var(--accent); font-size: 22px; padding: 0 4px; }
+    .rhythm-note {
+      margin-top: 40px; background: var(--mid); border-radius: 12px;
+      padding: 28px 32px; border-left: 4px solid var(--accent2);
+      max-width: 700px; margin-left: auto; margin-right: auto;
+    }
+    .rhythm-note p { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.8; }
+
+    /* ── TRANSFORM ────────────────────────────────────── */
+    .transform { background: var(--mid); padding: var(--section-pad); }
+    .transform-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px; margin-top: 52px;
+    }
+    .transform-card {
+      background: var(--dark); border-radius: 14px;
+      padding: 32px 28px; border-left: 3px solid var(--accent);
+    }
+    .transform-moment {
+      font-size: 17px; font-weight: 700; font-style: italic;
+      color: var(--accent2); margin-bottom: 14px; line-height: 1.35;
+    }
+    .transform-card p { font-size: 14px; color: rgba(255,255,255,0.68); line-height: 1.75; }
+    .transform-bottom {
+      margin-top: 48px; text-align: center; max-width: 600px;
+      margin-left: auto; margin-right: auto;
+    }
+    .transform-bottom p { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.8; }
+    .transform-bottom strong { color: var(--white); }
+
+    /* ── PHOTO STRIP ──────────────────────────────────── */
+    .photo-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 4px; height: 260px; overflow: hidden;
+    }
+    .photo-strip img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .photo-strip img:hover { transform: scale(1.05); }
+
+    /* ── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 720px) {
+      :root { --section-pad: 64px 20px; }
+      .location-grid { grid-template-columns: 1fr; }
+      .location-image { order: -1; }
+      .included-grid { grid-template-columns: 1fr; }
+      .hero-meta { gap: 20px; }
+      .pricing-cards { flex-direction: column; align-items: center; }
+      .rhythm-arc { flex-direction: column; }
+      .rhythm-arrow { transform: rotate(90deg); }
+      .photo-strip { grid-template-columns: 1fr 1fr; height: 380px; }
+    }
+  </style>
+</head>
+<body class="de">
+
+<!-- Language Toggle -->
+<div class="lang-bar">
+  <button class="lang-btn active" id="btn-de" onclick="setLang('de')">DE</button>
+  &nbsp;
+  <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+</div>
+
+<!-- Urgency Bar -->
+<div class="urgency-bar">
+  <span lang-de>🔥 Nur noch wenige Plätze verfügbar — 21.–25. Mai 2026, Mallorca</span>
+  <span lang-en>🔥 Limited spots remaining — May 21–25, 2026, Mallorca</span>
+</div>
+
+<!-- ══ HERO ══════════════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <p class="hero-eyebrow">ThriveZone Retreat 2026</p>
+
+  <h1 lang-de>Live<br>to <em>Thrive.</em></h1>
+  <h1 lang-en>Live<br>to <em>Thrive.</em></h1>
+
+  <p class="hero-sub" lang-de>
+    5 Tage Mallorca. Training, Ernährung, Flow &amp; echte Transformation.<br>
+    Nicht nur Fitness — eine neue Art zu leben.
+  </p>
+  <p class="hero-sub" lang-en>
+    5 days in Mallorca. Training, nutrition, flow &amp; real transformation.<br>
+    Not just fitness — a new way of living.
+  </p>
+
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span>21–25</span><span lang-de>Mai 2026</span><span lang-en>May 2026</span>
+    </div>
+    <div class="hero-meta-item">
+      <span>Mallorca</span><span>Santanyí</span>
+    </div>
+    <div class="hero-meta-item">
+      <span lang-de>Max. 8</span><span lang-en>Max. 8</span>
+      <span lang-de>Teilnehmer</span><span lang-en>Participants</span>
+    </div>
+    <div class="hero-meta-item">
+      <span>4</span>
+      <span lang-de>Nächte</span><span lang-en>Nights</span>
+    </div>
+  </div>
+
+  <div class="hero-cta">
+    <a href="#cta" class="btn btn-primary" lang-de>Jetzt anfragen</a>
+    <a href="#cta" class="btn btn-primary" lang-en>Apply now</a>
+    <a href="#programm" class="btn btn-secondary" lang-de>Programm ansehen</a>
+    <a href="#programm" class="btn btn-secondary" lang-en>See the program</a>
+  </div>
+
+  <div class="hero-scroll" lang-de>Mehr entdecken</div>
+  <div class="hero-scroll" lang-en>Explore more</div>
+</section>
+
+<!-- ══ QUOTE ══════════════════════════════════════════════════════════════════ -->
+<div class="quote-banner">
+  <blockquote lang-de>
+    Nicht Wissen erzeugt Veränderung — sondern erlebte Realität.
+  </blockquote>
+  <blockquote lang-en>
+    Knowledge alone doesn't create change — lived experience does.
+  </blockquote>
+</div>
+
+<!-- ══ PILLARS ════════════════════════════════════════════════════════════════ -->
+<section class="pillars" id="konzept">
+  <div class="container">
+    <p class="section-label" lang-de>Das Konzept</p>
+    <p class="section-label" lang-en>The Concept</p>
+
+    <h2 class="section-title" lang-de>Build <em>Skills.</em><br>Boost <em>Flow.</em></h2>
+    <h2 class="section-title" lang-en>Build <em>Skills.</em><br>Boost <em>Flow.</em></h2>
+
+    <p class="section-body" lang-de>
+      Das ThriveZone Retreat ist kein klassisches Fitness-Camp. Es ist eine bewusst designte Umgebung, die Verhalten verändert. In 5 Tagen erlebst du, wie Training, Ernährung, Mindset und Gewohnheiten zu einem integrierten System werden — das du danach mit nach Hause nimmst.
+    </p>
+    <p class="section-body" lang-en>
+      The ThriveZone Retreat is not a classic fitness camp. It's a deliberately designed environment that changes behaviour. Over 5 days you experience how training, nutrition, mindset and habits merge into one integrated system — one you take home with you.
+    </p>
+
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-icon">💪</div>
+        <h3 lang-de>Training</h3>
+        <h3 lang-en>Training</h3>
+        <p lang-de>Kein isoliertes Gym-Training. Du tauchst ein in Ausdauer, Kraft, Mobilität und körperliche Flow-Aktivitäten — und lernst, wie du all das optimal in deinen Alltag integrierst. Deep Dives in Mobility, Bodyweight &amp; Core Training und High Intensity Intervals. Morgens Laufen in Mallorcas Natur, abends funktionelles Krafttraining in der Gruppe. Mit Physio-Support und Bewegungsanalyse von Asrar.</p>
+        <p lang-en>No isolated gym sessions. You immerse yourself in endurance, strength, mobility and physical flow activities — and learn how to integrate all of it optimally into your everyday life. Deep dives in mobility, bodyweight &amp; core training, and high intensity intervals. Morning runs through Mallorca's nature, evening functional strength training as a group. With physio support and movement analysis from Asrar.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">🥗</div>
+        <h3 lang-de>Ernährung</h3>
+        <h3 lang-en>Nutrition</h3>
+        <p lang-de>Immersives Lernen statt Theorie-Input. Du kochst einfache ThriveZone-Rezepte mit, die speziell darauf ausgerichtet sind, den Körper zu stärken und Mikronährstoffe zu optimieren. Frühstück, Mittag, Abendessen — alles frisch, alles mit Intention. Und das Schönste: Du sitzt zusammen in einer Küche mit Blick auf das Tal — und das Gespräch am Tisch ist oft das Beste des Tages.</p>
+        <p lang-en>Immersive learning, not theory. You cook ThriveZone recipes side by side — simple, specifically designed to strengthen the body and optimise micronutrients. Breakfast, lunch, dinner — all fresh, all intentional. And the best part: you sit together in a kitchen with views across the valley, and the conversation around the table is often the highlight of the day.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">🧘</div>
+        <h3 lang-de>Meditation &amp; Mindset</h3>
+        <h3 lang-en>Meditation &amp; Mindset</h3>
+        <p lang-de>Meditation ist kein Bonus — sie ist struktureller Teil des Retreats. Alicja führt täglich abends durch geführte Meditationen, die den Übergang von Aktivierung zu Tiefschlaf gestalten. Du lernst: wie Atemarbeit das Nervensystem reguliert, wie Stille Gedanken ordnet, und wie du Flow nicht nur im Training erreichst — sondern im Leben. Zirkadianer Rhythmus, Lichtexposition und Reflexion runden das System ab.</p>
+        <p lang-en>Meditation isn't a bonus — it's a structural part of the retreat. Alicja leads guided meditations every evening, shaping the transition from activation to deep sleep. You'll learn how breathwork regulates the nervous system, how stillness orders the mind, and how to reach flow not only in training — but in life. Circadian rhythm, light exposure and reflection complete the system.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">🏔️</div>
+        <h3 lang-de>Flow-Aktivitäten &amp; Natur</h3>
+        <h3 lang-en>Flow Activities &amp; Nature</h3>
+        <p lang-de>Klettern, Wandern, Mountainbike — körperliche Herausforderungen, die mentale Grenzen verschieben. Diese Aktivitäten sind keine Ausflüge. Sie sind bewusst gewählte Flow-Katalysatoren: Volle Aufmerksamkeit, kein Raum für Ablenkung, purer Moment. Die Natur Mallorcas ist dabei kein Hintergrund — sie ist Teil des Programms.</p>
+        <p lang-en>Climbing, hiking, mountain biking — physical challenges that shift mental boundaries. These activities aren't excursions. They are deliberately chosen flow catalysts: full attention, no room for distraction, pure presence. Mallorca's nature isn't the backdrop — it's part of the programme.</p>
+      </div>
+    </div>
+
+    <!-- Activity image triptych -->
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top:40px; border-radius:12px; overflow:hidden;">
+      <div style="position:relative; height:260px; overflow:hidden;">
+        <img src="./images/activity_climbing.jpg" alt="Klettern" style="width:100%;height:100%;object-fit:cover;object-position:center 65%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(22,38,51,0.85));padding:16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;" lang-de>Klettern</div>
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(22,38,51,0.85));padding:16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;" lang-en>Climbing</div>
+      </div>
+      <div style="position:relative; height:260px; overflow:hidden;">
+        <img src="./images/activity_hiking.jpg" alt="Wandern" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(22,38,51,0.85));padding:16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;" lang-de>Wandern</div>
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(22,38,51,0.85));padding:16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;" lang-en>Hiking</div>
+      </div>
+      <div style="position:relative; height:260px; overflow:hidden;">
+        <img src="./images/mallorca_coast.jpg" alt="Mallorca Küste" style="width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(22,38,51,0.85));padding:16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;" lang-de>Mallorca</div>
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(22,38,51,0.85));padding:16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;" lang-en>Mallorca</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RHYTHM ════════════════════════════════════════════════════════════════ -->
+<section class="rhythm" id="flow">
+  <div class="container">
+    <p class="section-label" lang-de>Die Architektur des Tages</p>
+    <p class="section-label" lang-en>The Architecture of Each Day</p>
+
+    <h2 class="section-title" lang-de>Aktivierung. Erlebnis.<br><em>Tiefe Regeneration.</em></h2>
+    <h2 class="section-title" lang-en>Activation. Experience.<br><em>Deep Regeneration.</em></h2>
+
+    <p class="section-body" lang-de>
+      Jeder Tag folgt einer bewusst designten Energie-Kurve. Dein Körper wird gefordert — während sich dein Geist entspannt. Teilnehmer berichten, dass sie nach kurzer Zeit aufgehört haben, an Arbeit, Alltag oder Verpflichtungen zu denken. Sie waren einfach da. Im Moment. Vollständig präsent — vielleicht zum ersten Mal seit Jahren. Genau das ist kein Zufall. Es ist das Design.
+    </p>
+    <p class="section-body" lang-en>
+      Every day follows a deliberately designed energy arc. Your body is challenged — while your mind unwinds. Participants report that after a short time, they stopped thinking about work, daily life or obligations. They were simply present. Fully in the moment — perhaps for the first time in years. That's not a coincidence. It's the design.
+    </p>
+
+    <div class="rhythm-arc">
+      <div class="rhythm-step rhythm-accent">
+        <div class="rhythm-icon">🌅</div>
+        <div class="rhythm-label" lang-de>Morgen<br><small>Laufen · Licht · Bewegung</small></div>
+        <div class="rhythm-label" lang-en>Morning<br><small>Run · Light · Movement</small></div>
+      </div>
+      <div class="rhythm-arrow">→</div>
+      <div class="rhythm-step rhythm-step-accent">
+        <div class="rhythm-icon">⚡</div>
+        <div class="rhythm-label" lang-de>Mittag<br><small>Peak-Erlebnis · Natur</small></div>
+        <div class="rhythm-label" lang-en>Midday<br><small>Peak Experience · Nature</small></div>
+      </div>
+      <div class="rhythm-arrow">→</div>
+      <div class="rhythm-step">
+        <div class="rhythm-icon">🌊</div>
+        <div class="rhythm-label" lang-de>Nachmittag<br><small>Pool · Schlaf · Stille</small></div>
+        <div class="rhythm-label" lang-en>Afternoon<br><small>Pool · Rest · Stillness</small></div>
+      </div>
+      <div class="rhythm-arrow">→</div>
+      <div class="rhythm-step rhythm-step-accent">
+        <div class="rhythm-icon">💪</div>
+        <div class="rhythm-label" lang-de>Abend<br><small>Kraft · Gruppe · Energie</small></div>
+        <div class="rhythm-label" lang-en>Evening<br><small>Strength · Group · Energy</small></div>
+      </div>
+      <div class="rhythm-arrow">→</div>
+      <div class="rhythm-step rhythm-step-glow">
+        <div class="rhythm-icon">🧘</div>
+        <div class="rhythm-label" lang-de>Nacht<br><small>Dinner · Meditation · Tiefschlaf</small></div>
+        <div class="rhythm-label" lang-en>Night<br><small>Dinner · Meditation · Deep Sleep</small></div>
+      </div>
+    </div>
+
+    <div class="rhythm-note" style="display:grid; grid-template-columns: auto 1fr; gap:28px; align-items:center;">
+      <div style="flex-shrink:0; width:110px; height:110px; border-radius:50%; overflow:hidden; border:3px solid var(--accent2);">
+        <img src="./images/alicja_portrait.jpg" alt="Alicja" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:6px;" lang-de>Alicja — Meditations- &amp; Achtsamkeits-Coach</div>
+        <div style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:6px;" lang-en>Alicja — Meditation &amp; Mindfulness Coach</div>
+        <p lang-de><strong>Warum Meditation hier keine Nebensache ist:</strong> Sportliche Aktivierung erhöht Cortisol und BDNF — das Gehirn ist offen und formbar. Tiefe Regeneration verankert das Erlebte. Aber erst die Meditation macht den Kreis vollständig. Regelmäßige Meditationspraxis reduziert nachweislich chronischen Stress, verbessert die Schlafqualität, schärft die Fokus­fähigkeit und aktiviert das parasympathische Nervensystem — den Gegenpol zur dauerhaften Anspannung des modernen Alltags. Alicjas geführte Abend-Meditationen sind kein Esoterik-Programm. Sie sind ein präzises Werkzeug: Körper herunterregulieren, Gedanken ordnen, Tiefschlaf vorbereiten.</p>
+        <p lang-en><strong>Why meditation is not an afterthought here:</strong> Athletic activation raises cortisol and BDNF — the brain becomes open and malleable. Deep regeneration anchors the experience. But meditation completes the loop. Regular meditation practice measurably reduces chronic stress, improves sleep quality, sharpens focus and activates the parasympathetic nervous system — the counterpart to the constant tension of modern life. Alicja's guided evening meditations are not a mystical programme. They are a precise tool: down-regulate the body, organise thoughts, prepare for deep sleep.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SCHEDULE ═══════════════════════════════════════════════════════════════ -->
+<section class="schedule" id="programm">
+  <div class="container">
+    <p class="section-label" lang-de>Tagesablauf</p>
+    <p class="section-label" lang-en>Daily Structure</p>
+
+    <h2 class="section-title" lang-de>Ein Tag im <em>Retreat</em></h2>
+    <h2 class="section-title" lang-en>A Day in the <em>Retreat</em></h2>
+
+    <p class="section-body" lang-de>Jeder Tag folgt einem natürlichen Energieverlauf — kein Stress, kein Overload. Dein Körper und Geist bekommen genau das, was sie brauchen.</p>
+    <p class="section-body" lang-en>Every day follows your body's natural energy curve — no stress, no overload. Your body and mind get exactly what they need.</p>
+
+    <div class="schedule-list">
+      <div class="schedule-item">
+        <span class="schedule-time">07:00</span>
+        <div class="schedule-content">
+          <h4 lang-de>Aufstehen — natürlich, ohne Wecker</h4>
+          <h4 lang-en>Wake up — naturally, no alarm</h4>
+          <p lang-de>Light viewing, Morning Stretches, Cold Exposure optional</p>
+          <p lang-en>Light viewing, morning stretches, optional cold exposure</p>
+        </div>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-time">08:00</span>
+        <div class="schedule-content">
+          <h4 lang-de>Laufgruppe</h4>
+          <h4 lang-en>Running Group</h4>
+          <p lang-de>Level-angepasst — von gemütlich bis forsch. Mallorca pur.</p>
+          <p lang-en>Pace-adjusted — from easy to challenging. Pure Mallorca.</p>
+        </div>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-time">09:00</span>
+        <div class="schedule-content">
+          <h4 lang-de>Mobility &amp; Activation</h4>
+          <h4 lang-en>Mobility &amp; Activation</h4>
+          <p lang-de>Low Intensity — Körper aktivieren, nicht überfordern. Optional mit Physio-Einheit.</p>
+          <p lang-en>Low intensity — activate the body, not overload it. Optional physio session.</p>
+        </div>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-time">11:00</span>
+        <div class="schedule-content">
+          <h4 lang-de>Frühstück</h4>
+          <h4 lang-en>Breakfast</h4>
+          <p lang-de>Bewusst, langsam, proteinbasiert — mit Fokus auf das ThriveZone Ernährungssystem.</p>
+          <p lang-en>Mindful, slow, protein-based — focused on the ThriveZone nutrition system.</p>
+        </div>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-time">13:00</span>
+        <div class="schedule-content">
+          <h4 lang-de>Tageshighlight</h4>
+          <h4 lang-en>Day Highlight</h4>
+          <p lang-de>Klettern / Wandern / MTB / Bootstour — emotionaler Impact, neue Erfahrungen, Gruppendynamik.</p>
+          <p lang-en>Climbing / hiking / MTB / boat trip — emotional impact, new experiences, group energy.</p>
+        </div>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-time">16:00</span>
+        <div class="schedule-content">
+          <h4 lang-de>Regeneration</h4>
+          <h4 lang-en>Recovery</h4>
+          <p lang-de>Powernap, Pool, Ruhe — oder optionale Massage bei Asrar.</p>
+          <p lang-en>Power nap, pool, rest — or optional massage with Asrar.</p>
+        </div>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-time">19:00</span>
+        <div class="schedule-content">
+          <h4 lang-de>Strength Training</h4>
+          <h4 lang-en>Strength Training</h4>
+          <p lang-de>Funktionell, minimal Equipment, starke Gruppendynamik. Das Herzstück des Abends.</p>
+          <p lang-en>Functional, minimal equipment, powerful group dynamic. The centrepiece of the evening.</p>
+        </div>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-time">20:30</span>
+        <div class="schedule-content">
+          <h4 lang-de>Dinner &amp; Meditation</h4>
+          <h4 lang-en>Dinner &amp; Meditation</h4>
+          <p lang-de>Sozial, entspannt — mit Alicjas Abend-Meditation zum Runterkommen.</p>
+          <p lang-en>Social, relaxed — with Alicja's evening meditation to wind down.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PHOTO STRIP ════════════════════════════════════════════════════════════ -->
+<div class="photo-strip">
+  <img src="./images/villa_pool_golden.jpg" alt="Villa Pool Goldstunde" style="object-position: center 48%;">
+  <img src="./images/mallorca_coast.jpg" alt="Mallorca Küste" style="object-position: center 72%;">
+  <img src="./images/food_branding.jpg" alt="ThriveZone Ernährung" style="object-position: center 50%;">
+  <img src="./images/training_outdoor.jpg" alt="Outdoor Training" style="object-position: center 35%;">
+</div>
+
+<!-- ══ TRANSFORMATION ════════════════════════════════════════════════════════ -->
+<section class="transform" id="transformation">
+  <div class="container">
+    <p class="section-label" lang-de>Was wirklich passiert</p>
+    <p class="section-label" lang-en>What really happens</p>
+
+    <h2 class="section-title" lang-de>Nicht Urlaub.<br><em>Wendepunkt.</em></h2>
+    <h2 class="section-title" lang-en>Not a holiday.<br><em>A turning point.</em></h2>
+
+    <p class="section-body" lang-de>
+      In 5 Tagen passiert mehr als in vielen Monaten alleine. Nicht weil wir dir etwas erklären — sondern weil du es erlebst. Struktur, Coach-Präsenz, Gleichgesinnte, Natur: All das zusammen erzeugt einen Kontext, der Veränderung nicht fordert, sondern ermöglicht.
+    </p>
+    <p class="section-body" lang-en>
+      In 5 days, more happens than in many months alone. Not because we explain things to you — but because you live them. Structure, coach presence, like-minded people, nature: together they create a context that doesn't demand change — it enables it.
+    </p>
+
+    <div class="transform-grid">
+      <div class="transform-card">
+        <div class="transform-moment" lang-de>„Ich hab gespürt, was mein Körper kann."</div>
+        <div class="transform-moment" lang-en>"I felt what my body is actually capable of."</div>
+        <p lang-de>Wenn der erste Pull-Up gelingt. Wenn du eine Bergspitze erreichst, die du nicht für möglich gehalten hättest. Wenn du nach dem Abend-Training erschöpft und gleichzeitig lebendig bist — das sind keine Zufälle. Das ist der Beweis, dass du mehr kannst als gedacht.</p>
+        <p lang-en>When the first pull-up happens. When you reach a summit you didn't think was possible. When you finish the evening session exhausted and alive at the same time — these aren't coincidences. They are proof that you're capable of more than you thought.</p>
+      </div>
+      <div class="transform-card">
+        <div class="transform-moment" lang-de>„Ich hab aufgehört, Ernährung zu denken — und angefangen, sie zu leben."</div>
+        <div class="transform-moment" lang-en>"I stopped thinking about nutrition and started living it."</div>
+        <p lang-de>Wenn du mit Alicja kochst, verstehst du Ernährung nicht als Plan — sondern als Praxis. Frühstück ohne Hast. Mahlzeiten die sättigen und nicht belasten. Nicht Disziplin, sondern Genuss als Fundament. Was du hier täglich lebst, nimmst du nach Hause mit.</p>
+        <p lang-en>When you cook with Alicja, nutrition stops being a plan and becomes a practice. Breakfast without rush. Meals that satisfy without weighing you down. Not discipline, but enjoyment as the foundation. What you live daily here, you take home.</p>
+      </div>
+      <div class="transform-card">
+        <div class="transform-moment" lang-de>„Ich hab zum ersten Mal richtig abgeschaltet."</div>
+        <div class="transform-moment" lang-en>"For the first time, I truly switched off."</div>
+        <p lang-de>Nachmittags am Pool, kein Telefon, kein Gedanke an morgen. Alicjas Meditation am Abend — kein Esoterik, kein Zwang, sondern ein Werkzeug. Dein Nervensystem lernt: Stille ist keine Leere. Stille ist Energie-Aufladung.</p>
+        <p lang-en>Afternoons by the pool, no phone, no thought of tomorrow. Alicja's evening meditation — no mysticism, no pressure, just a tool. Your nervous system learns: stillness isn't emptiness. Stillness is recharging.</p>
+      </div>
+      <div class="transform-card">
+        <div class="transform-moment" lang-de>„Die Gruppe hat mich mitgezogen, ohne dass ich es gemerkt habe."</div>
+        <div class="transform-moment" lang-en>"The group carried me forward without me even noticing."</div>
+        <p lang-de>Max. 8 Menschen. Keine Zuschauer, keine Wettbewerber. Alle wollen dasselbe: wachsen, lernen, sich spüren. In dieser Energie passiert etwas, das solo nicht möglich ist. Du gibst mehr, weil andere daneben geben.</p>
+        <p lang-en>Max. 8 people. No spectators, no competitors. Everyone wants the same thing: to grow, learn, feel themselves. In this energy, something happens that's not possible solo. You give more, because others give alongside you.</p>
+      </div>
+    </div>
+
+    <div class="transform-bottom">
+      <p lang-de>
+        Das ThriveZone Framework basiert auf einer Grundüberzeugung: <strong>Wissen alleine verändert nicht. Erlebte Realität verändert.</strong> Diese 5 Tage sind keine Zusammenfassung von Theorie. Sie sind der Sprung in die Praxis — mit allem, was dazu gehört.
+      </p>
+      <p lang-en>
+        The ThriveZone Framework rests on one core belief: <strong>Knowledge alone doesn't create change. Lived experience does.</strong> These 5 days are not a summary of theory. They are the leap into practice — with everything that comes with it.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ IMPRESSIONEN ══════════════════════════════════════════════════════════ -->
+<section style="background:var(--sand); padding: 70px 24px;">
+  <div class="container">
+    <p class="section-label" style="color:var(--accent);" lang-de>Aus dem Leben im Retreat</p>
+    <p class="section-label" style="color:var(--accent);" lang-en>Life at the Retreat</p>
+    <h2 class="section-title" style="color:var(--text-dark);" lang-de>Echte Momente.<br><em style="color:var(--accent);">Echte Menschen.</em></h2>
+    <h2 class="section-title" style="color:var(--text-dark);" lang-en>Real moments.<br><em style="color:var(--accent);">Real people.</em></h2>
+  </div>
+  <!-- 5-image masonry grid -->
+  <div style="display:grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 240px 240px; gap:6px; margin-top:32px; max-width:1100px; margin-left:auto; margin-right:auto; border-radius:14px; overflow:hidden;">
+    <div style="grid-row: 1/3; overflow:hidden;">
+      <img src="./images/villa_activity.jpg" alt="Aktive Momente auf der Villa" style="width:100%;height:100%;object-fit:cover;object-position:center 22%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;">
+      <img src="./images/mallorca_explore.jpg" alt="Mallorca erkunden" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;">
+      <img src="./images/food_table.jpg" alt="Frische mediterrane Küche" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;">
+      <img src="./images/villa_pool_night.jpg" alt="Pool bei Nacht" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;">
+      <img src="./images/villa_golden.jpg" alt="Villa Can Paulo" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+  </div>
+</section>
+
+<!-- ══ LOCATION ════════════════════════════════════════════════════════════════ -->
+<section class="location" id="location">
+  <div class="container">
+    <div class="location-grid">
+      <div>
+        <p class="section-label" lang-de>Die Location</p>
+        <p class="section-label" lang-en>The Location</p>
+        <h2 class="section-title" lang-de>Villa Can Paulo,<br><em>Santanyí</em></h2>
+        <h2 class="section-title" lang-en>Villa Can Paulo,<br><em>Santanyí</em></h2>
+        <p class="section-body" lang-de>Mitten im Naturpark Mondragó, Südosten Mallorcas. Privater Pool, 500m² Fläche, Garten für Outdoor-Training — und gleichzeitig nah am Meer und kleinen Dörfern. Die Villa liegt so perfekt, dass man abends die Grillen hören kann. Kein Tourismus, kein Lärm — umgeben von Natur und Zitronenbäumen. Die einzigen Geräusche? Fasane, die frei ums Grundstück laufen.</p>
+        <p class="section-body" lang-en>In the heart of Mondragó Nature Park, south-east Mallorca. Private pool, 500m² space, garden for outdoor training — and close to the sea and charming villages. The villa is so perfectly situated that in the evenings you can hear the crickets. No tourism, no noise — surrounded by nature and lemon trees. The only sounds? Pheasants roaming freely around the grounds.</p>
+        <div class="location-features">
+          <div class="location-feat">
+            <div class="location-feat-icon">🏊</div>
+            <div class="location-feat-text">
+              <h4 lang-de>Privater Pool</h4><h4 lang-en>Private Pool</h4>
+              <p lang-de>Exklusiv für die Gruppe</p><p lang-en>Exclusive to the group</p>
+            </div>
+          </div>
+          <div class="location-feat">
+            <div class="location-feat-icon">🌿</div>
+            <div class="location-feat-text">
+              <h4 lang-de>Naturpark Mondragó</h4><h4 lang-en>Mondragó Nature Park</h4>
+              <p lang-de>Wandern &amp; MTB direkt vor der Tür</p><p lang-en>Hiking &amp; MTB right outside</p>
+            </div>
+          </div>
+          <div class="location-feat">
+            <div class="location-feat-icon">🌊</div>
+            <div class="location-feat-text">
+              <h4 lang-de>Nähe zum Meer</h4><h4 lang-en>Close to the Sea</h4>
+              <p lang-de>Bootstouren, Strand, Erholung</p><p lang-en>Boat trips, beach, relaxation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="location-image">
+        <img src="./images/villa_pool_aerial.jpg" alt="Pool Aerial" style="object-position: center 30%;">
+        <img src="./images/villa_pool_golden.jpg" alt="Pool mit Kaktus" style="object-position: center 60%;">
+        <img src="./images/villa_golden.jpg" alt="Villa Goldstunde" style="object-position: center 50%;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TEAM ════════════════════════════════════════════════════════════════════ -->
+<section class="team" id="team">
+  <div class="container">
+    <p class="section-label" lang-de>Deine Hosts</p>
+    <p class="section-label" lang-en>Your Hosts</p>
+    <h2 class="section-title" lang-de>Das <em>Team</em></h2>
+    <h2 class="section-title" lang-en>The <em>Team</em></h2>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-card-header"><img src="./images/andreas_portrait.jpg" alt="Andreas"></div>
+        <div class="team-card-body">
+          <div class="team-name">Andreas</div>
+          <div class="team-role" lang-de>Gründer ThriveZone</div>
+          <div class="team-role" lang-en>ThriveZone Founder</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">
+            <span style="background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;" lang-de>Diplom-Sportwissenschaftler</span>
+            <span style="background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;" lang-de>Personal Trainer</span>
+            <span style="background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;" lang-en>Sports Scientist (Dipl.)</span>
+            <span style="background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;" lang-en>Personal Trainer</span>
+          </div>
+          <p class="team-desc" lang-de>17 Jahre Erfahrung. Andreas hat das ThriveZone Framework entwickelt — die Grundlage für alles, was du im Retreat erleben wirst. Er leitet Training, Aktivitäten und das Gesamterlebnis. Sein Ansatz: Nicht Wissen, sondern erlebte Realität verändert Menschen nachhaltig.</p>
+          <p class="team-desc" lang-en>17 years of experience. Andreas created the ThriveZone Framework — the foundation for everything you'll experience at the retreat. He leads training, activities and the overall journey. His approach: not knowledge, but lived reality creates lasting change.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card-header"><img src="./images/alicja_portrait.jpg" alt="Alicja" style="object-position: center top;"></div>
+        <div class="team-card-body">
+          <div class="team-name">Alicja</div>
+          <div class="team-role" lang-de>Die Seele des Retreats</div>
+          <div class="team-role" lang-en>The Soul of the Retreat</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">
+            <span style="background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;" lang-de>Meditations-Coach</span>
+            <span style="background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;" lang-de>Achtsamkeits-Coach</span>
+            <span style="background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;" lang-en>Meditation Coach</span>
+            <span style="background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;" lang-en>Mindfulness Coach</span>
+          </div>
+          <p class="team-desc" lang-de>Alicja ist die Seele hinter dem nahtlosen Ablauf des Retreats — und dem Comfort, den alle spüren. Als Meditations- und Achtsamkeits-Coach gestaltet sie die täglichen Abend-Meditationen, die den Übergang von Aktivierung zu echter Erholung ermöglichen. Gleichzeitig sorgt sie für alles Organisatorische: Essen, Atmosphäre, Detailarbeit. Wenn das Retreat sich mühelos anfühlt, ist das ihr Werk.</p>
+          <p class="team-desc" lang-en>Alicja is the soul behind the retreat's seamless flow — and the comfort everyone feels. As a meditation and mindfulness coach, she leads daily evening meditations that bridge activation and real recovery. She also handles everything organisational: food, atmosphere, the details that matter. When the retreat feels effortless, that's her work.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card-header"><img src="./images/asrar_portrait.jpg" alt="Asrar" style="object-position: center 15%;"></div>
+        <div class="team-card-body">
+          <div class="team-name">Asrar</div>
+          <div class="team-role" lang-de>Heilende Hände</div>
+          <div class="team-role" lang-en>Healing Hands</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">
+            <span style="background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;" lang-de>Sportwissenschaftler</span>
+            <span style="background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;" lang-de>Physiotherapeut</span>
+            <span style="background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;" lang-en>Sports Scientist</span>
+            <span style="background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;" lang-en>Physiotherapist</span>
+          </div>
+          <p class="team-desc" lang-de>Asrar verbindet Sportwissenschaft mit Physiotherapie — eine Kombination, die beim Retreat 2026 erstmals dabei ist. Verspannungen, Schmerzen, alte Verletzungen, eingeschränkte Beweglichkeit: Asrar geht diese Themen praktisch und lösungsorientiert an. Er analysiert deine Bewegung, gibt dir gezielte physiotherapeutische Interventionen — und bietet auf Wunsch auch physiotherapeutische Massagen an.</p>
+          <p class="team-desc" lang-en>Asrar combines sports science with physiotherapy — a combination joining the retreat for the first time in 2026. Tension, pain, old injuries, restricted mobility: Asrar addresses these topics practically and solution-focused. He analyses your movement, delivers targeted physiotherapeutic interventions — and offers physiotherapeutic massages on request.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INCLUDED ════════════════════════════════════════════════════════════════ -->
+<section class="included" id="included">
+  <div class="container">
+    <p class="section-label" lang-de>Im Preis enthalten</p>
+    <p class="section-label" lang-en>What's Included</p>
+    <h2 class="section-title" lang-de>Alles was du <em>brauchst.</em></h2>
+    <h2 class="section-title" lang-en>Everything you <em>need.</em></h2>
+
+    <div class="included-grid">
+      <div class="included-item"><div class="included-check">✓</div><span lang-de>4 Übernachtungen in der Villa</span><span lang-en>4 nights at the villa</span></div>
+      <div class="included-item"><div class="included-check">✓</div><span lang-de>3 Mahlzeiten täglich (frisch zubereitet)</span><span lang-en>3 freshly prepared meals daily</span></div>
+      <div class="included-item"><div class="included-check">✓</div><span lang-de>2x tägliches Small-Group-Training</span><span lang-en>2x daily small-group training</span></div>
+      <div class="included-item"><div class="included-check">✓</div><span lang-de>Mobility, Stretching &amp; Foam Rolling</span><span lang-en>Mobility, stretching &amp; foam rolling</span></div>
+      <div class="included-item"><div class="included-check">✓</div><span lang-de>Tägliche Kochsessions &amp; Rezepte</span><span lang-en>Daily cooking sessions &amp; recipes</span></div>
+      <div class="included-item"><div class="included-check">✓</div><span lang-de>Meditation &amp; Mindset-Einheiten</span><span lang-en>Meditation &amp; mindset sessions</span></div>
+      <div class="included-item"><div class="included-check">✓</div><span lang-de>Physiotherapie-Check mit Asrar</span><span lang-en>Physiotherapy check with Asrar</span></div>
+      <div class="included-item"><div class="included-check">✓</div><span lang-de>Transfer auf Mallorca</span><span lang-en>Local transfer on Mallorca</span></div>
+      <div class="included-item"><div class="included-check">✓</div><span lang-de>ThriveZone Rezeptbuch</span><span lang-en>ThriveZone recipe booklet</span></div>
+      <div class="included-item"><div class="included-check">✓</div><span lang-de>Exklusivität — max. 8 Teilnehmer</span><span lang-en>Exclusivity — max. 8 participants</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRICING ════════════════════════════════════════════════════════════════ -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <p class="section-label" lang-de>Investition</p>
+    <p class="section-label" lang-en>Investment</p>
+    <h2 class="section-title" lang-de>Dein <em>Platz</em> im Retreat</h2>
+    <h2 class="section-title" lang-en>Your <em>Spot</em> in the Retreat</h2>
+
+    <div class="pricing-cards">
+      <div class="price-card featured">
+        <div class="price-badge" lang-de>Beliebt</div>
+        <div class="price-badge" lang-en>Popular</div>
+        <div class="price-type" lang-de>Doppelzimmer</div>
+        <div class="price-type" lang-en>Shared Room</div>
+        <div class="price-amount">1.996<span>€</span></div>
+        <div class="price-note" lang-de>pro Person</div>
+        <div class="price-note" lang-en>per person</div>
+        <ul class="price-features">
+          <li lang-de>Zimmer mit einem weiteren Teilnehmer</li>
+          <li lang-en>Room shared with one other participant</li>
+          <li lang-de>Alle enthaltenen Leistungen</li>
+          <li lang-en>All included services</li>
+          <li lang-de>Flug nicht enthalten</li>
+          <li lang-en>Flight not included</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-type" lang-de>Einzelzimmer</div>
+        <div class="price-type" lang-en>Single Room</div>
+        <div class="price-amount">2.450<span>€</span></div>
+        <div class="price-note" lang-de>pro Person</div>
+        <div class="price-note" lang-en>per person</div>
+        <ul class="price-features">
+          <li lang-de>Eigenes Zimmer, volle Privatsphäre</li>
+          <li lang-en>Private room, full privacy</li>
+          <li lang-de>Alle enthaltenen Leistungen</li>
+          <li lang-en>All included services</li>
+          <li lang-de>Flug nicht enthalten</li>
+          <li lang-en>Flight not included</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ADD-ONS ════════════════════════════════════════════════════════════════ -->
+<section class="addons">
+  <div class="container">
+    <p class="section-label" lang-de>Optional zubuchbar</p>
+    <p class="section-label" lang-en>Optional Add-ons</p>
+    <h2 class="section-title" lang-de>Mehr <em>erleben</em></h2>
+    <h2 class="section-title" lang-en>Experience <em>more</em></h2>
+    <p class="section-body" lang-de>Folgende Aktivitäten sind optional hinzubuchbar und werden vor Ort abgerechnet:</p>
+    <p class="section-body" lang-en>The following activities can be booked optionally and are settled on-site:</p>
+    <div class="addons-list">
+      <div class="addon-tag" lang-de>🚢 Bootstour<em>~€100/Person</em></div>
+      <div class="addon-tag" lang-en>🚢 Boat trip<em>~€100/person</em></div>
+      <div class="addon-tag" lang-de>🧘 Massage bei Asrar<em>Preis auf Anfrage</em></div>
+      <div class="addon-tag" lang-en>🧘 Massage with Asrar<em>price on request</em></div>
+      <div class="addon-tag" lang-de>🚵 Geführte MTB-Tour<em>Preis auf Anfrage</em></div>
+      <div class="addon-tag" lang-en>🚵 Guided MTB tour<em>price on request</em></div>
+      <div class="addon-tag" lang-de>🍽️ Restaurant-Abend<em>Preis auf Anfrage</em></div>
+      <div class="addon-tag" lang-en>🍽️ Restaurant evening<em>price on request</em></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ═════════════════════════════════════════════════════════════════════ -->
+<section class="cta-section" id="cta">
+  <div class="container">
+    <p class="section-label" lang-de>Bereit?</p>
+    <p class="section-label" lang-en>Ready?</p>
+    <h2 class="section-title" lang-de>Dein <em>bestes Ich</em> wartet auf Mallorca.</h2>
+    <h2 class="section-title" lang-en>Your <em>best self</em> is waiting in Mallorca.</h2>
+    <p class="section-body" lang-de>Plätze sind limitiert auf 8 Personen. Wenn du dabei sein möchtest, melde dich jetzt — bevor jemand anderes deinen Platz nimmt.</p>
+    <p class="section-body" lang-en>Places are limited to 8 people. If you want to join, reach out now — before someone else takes your spot.</p>
+    <div class="hero-cta" style="margin-top:36px">
+      <a href="mailto:andreas@heumann-personaltraining.berlin" class="btn btn-primary" lang-de>Jetzt Platz sichern</a>
+      <a href="mailto:andreas@heumann-personaltraining.berlin" class="btn btn-primary" lang-en>Secure your spot now</a>
+    </div>
+    <p class="cta-contact" lang-de>Oder direkt schreiben: <a href="mailto:andreas@heumann-personaltraining.berlin">andreas@heumann-personaltraining.berlin</a></p>
+    <p class="cta-contact" lang-en>Or email directly: <a href="mailto:andreas@heumann-personaltraining.berlin">andreas@heumann-personaltraining.berlin</a></p>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════════════════════════ -->
+<footer>
+  <p><strong>ThriveZone Retreat Mallorca 2026</strong> · Villa Can Paulo, Santanyí · 21.–25. Mai 2026</p>
+  <p style="margin-top:8px">© 2026 Andreas Heumann · <a href="mailto:andreas@heumann-personaltraining.berlin" style="color:rgba(255,255,255,0.4)">andreas@heumann-personaltraining.berlin</a></p>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.body.className = lang;
+    document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.documentElement.lang = lang;
+  }
+</script>
+</body>
+</html>
