@@ -330,6 +330,9 @@
     }
     .price-features li { font-size: 14px; color: rgba(255,255,255,0.7); display: flex; gap: 10px; }
     .price-features li::before { content: '✓'; color: var(--accent); font-weight: 900; }
+    .price-features li[lang-de], .price-features li[lang-en] { display: none; }
+    body.de .price-features li[lang-de] { display: flex; }
+    body.en .price-features li[lang-en] { display: flex; }
 
     /* ── ADD-ONS ─────────────────────────────────────── */
     .addons { background: var(--dark); }
