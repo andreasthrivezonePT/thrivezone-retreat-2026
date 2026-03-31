@@ -23,13 +23,14 @@
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
       background: var(--dark);
       color: var(--white);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     /* ── LANGUAGE TOGGLE ─────────────────────────────── */
@@ -51,8 +52,12 @@
     .lang-btn.active { background: var(--accent); border-color: var(--accent); }
 
     [lang-de], [lang-en] { display: none; }
-    body.de [lang-de] { display: revert; }
-    body.en [lang-en] { display: revert; }
+    body.de [lang-de] { display: block; }
+    body.en [lang-en] { display: block; }
+    body.de span[lang-de], body.de a[lang-de], body.de em[lang-de] { display: inline; }
+    body.en span[lang-en], body.en a[lang-en], body.en em[lang-en] { display: inline; }
+    body.de a.btn[lang-de], body.de button.btn[lang-de] { display: inline-block; }
+    body.en a.btn[lang-en], body.en button.btn[lang-en] { display: inline-block; }
 
     /* ── HERO ────────────────────────────────────────── */
     .hero {
@@ -62,13 +67,15 @@
       text-align: center;
       padding: 100px 24px 60px;
       background:
-        linear-gradient(to bottom, rgba(15,25,35,0.55) 0%, rgba(15,25,35,0.85) 100%),
-        url('./images/villa_pool_aerial.jpg') center top/cover no-repeat;
+        linear-gradient(to bottom, rgba(10,18,28,0.18) 0%, rgba(10,18,28,0.25) 38%, rgba(10,18,28,0.72) 68%, rgba(10,18,28,0.92) 100%),
+        url('./images/villa_pool_golden.jpg') center 45%/cover no-repeat;
       position: relative;
     }
     .hero-eyebrow {
-      font-size: 13px; letter-spacing: 4px; text-transform: uppercase;
+      font-size: 15px; letter-spacing: 4px; text-transform: uppercase;
       color: var(--accent); font-weight: 700; margin-bottom: 20px;
+      background: rgba(0,0,0,0.35); padding: 8px 20px; border-radius: 40px;
+      border: 1px solid rgba(255,165,60,0.4); display: inline-block;
     }
     .hero h1 {
       font-size: clamp(42px, 8vw, 88px);
@@ -340,7 +347,7 @@
     .cta-section {
       background:
         linear-gradient(to bottom, rgba(15,25,35,0.75), rgba(15,25,35,0.92)),
-        url('./images/yoga_outdoor.jpg') center/cover;
+        url('./images/new_sunset_meditation.jpg') center/cover;
       padding: var(--section-pad);
       text-align: center;
     }
@@ -438,6 +445,21 @@
       .rhythm-arrow { transform: rotate(90deg); }
       .photo-strip { grid-template-columns: 1fr 1fr; height: 380px; }
     }
+    @media (max-width: 600px) {
+      .capacity-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+      .training-photo-strip {
+        grid-template-columns: 1fr !important;
+        height: auto !important;
+      }
+      .training-photo-strip > div {
+        height: 220px !important;
+      }
+      .deepdive-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
   </style>
 </head>
 <body class="de">
@@ -464,11 +486,11 @@
 
   <p class="hero-sub" lang-de>
     5 Tage Mallorca. Training, Ernährung, Flow &amp; echte Transformation.<br>
-    Nicht nur Fitness — eine neue Art zu leben.
+    Mehr als Fitness — eine neue Art zu leben.
   </p>
   <p class="hero-sub" lang-en>
     5 days in Mallorca. Training, nutrition, flow &amp; real transformation.<br>
-    Not just fitness — a new way of living.
+    More than fitness — a new way of living.
   </p>
 
   <div class="hero-meta">
@@ -479,7 +501,7 @@
       <span>Mallorca</span><span>Santanyí</span>
     </div>
     <div class="hero-meta-item">
-      <span lang-de>Max. 8</span><span lang-en>Max. 8</span>
+      <span lang-de>Max. 10</span><span lang-en>Max. 10</span>
       <span lang-de>Teilnehmer</span><span lang-en>Participants</span>
     </div>
     <div class="hero-meta-item">
@@ -502,10 +524,10 @@
 <!-- ══ QUOTE ══════════════════════════════════════════════════════════════════ -->
 <div class="quote-banner">
   <blockquote lang-de>
-    Nicht Wissen erzeugt Veränderung — sondern erlebte Realität.
+    Erlebte Realität erzeugt Veränderung. Tief und dauerhaft.
   </blockquote>
   <blockquote lang-en>
-    Knowledge alone doesn't create change — lived experience does.
+    Lived experience creates change. Deep and lasting.
   </blockquote>
 </div>
 
@@ -519,10 +541,10 @@
     <h2 class="section-title" lang-en>Build <em>Skills.</em><br>Boost <em>Flow.</em></h2>
 
     <p class="section-body" lang-de>
-      Das ThriveZone Retreat ist kein klassisches Fitness-Camp. Es ist eine bewusst designte Umgebung, die Verhalten verändert. In 5 Tagen erlebst du, wie Training, Ernährung, Mindset und Gewohnheiten zu einem integrierten System werden — das du danach mit nach Hause nimmst.
+      Das ThriveZone Retreat ist eine bewusst designte Umgebung, die Verhalten verändert. In 5 Tagen erlebst du, wie Training, Ernährung, Mindset und Gewohnheiten zu einem integrierten System werden — das du danach mit nach Hause nimmst.
     </p>
     <p class="section-body" lang-en>
-      The ThriveZone Retreat is not a classic fitness camp. It's a deliberately designed environment that changes behaviour. Over 5 days you experience how training, nutrition, mindset and habits merge into one integrated system — one you take home with you.
+      The ThriveZone Retreat is a deliberately designed environment that creates lasting change. Over 5 days you experience how training, nutrition, mindset and habits merge into one integrated system — one you take home with you.
     </p>
 
     <div class="pillars-grid">
@@ -559,13 +581,13 @@
     <!-- Activity image triptych -->
     <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top:40px; border-radius:12px; overflow:hidden;">
       <div style="position:relative; height:260px; overflow:hidden;">
-        <img src="./images/activity_climbing.jpg" alt="Klettern" style="width:100%;height:100%;object-fit:cover;object-position:center 65%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(22,38,51,0.85));padding:16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;" lang-de>Klettern</div>
+        <img src="./images/new_rock_climbing.jpg" alt="Klettern" style="width:100%;height:100%;object-fit:cover;object-position:center 65%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(22,38,51,0.85));padding:16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;" lang-de>Retreat 2024</div>
         <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(22,38,51,0.85));padding:16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;" lang-en>Climbing</div>
       </div>
       <div style="position:relative; height:260px; overflow:hidden;">
-        <img src="./images/activity_hiking.jpg" alt="Wandern" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(22,38,51,0.85));padding:16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;" lang-de>Wandern</div>
+        <img src="./images/group_drone.jpg" alt="Gruppe" style="width:100%;height:100%;object-fit:cover;object-position:center 55%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(22,38,51,0.85));padding:16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;" lang-de>Retreat 2024</div>
         <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(22,38,51,0.85));padding:16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;" lang-en>Hiking</div>
       </div>
       <div style="position:relative; height:260px; overflow:hidden;">
@@ -587,10 +609,10 @@
     <h2 class="section-title" lang-en>Activation. Experience.<br><em>Deep Regeneration.</em></h2>
 
     <p class="section-body" lang-de>
-      Jeder Tag folgt einer bewusst designten Energie-Kurve. Dein Körper wird gefordert — während sich dein Geist entspannt. Teilnehmer berichten, dass sie nach kurzer Zeit aufgehört haben, an Arbeit, Alltag oder Verpflichtungen zu denken. Sie waren einfach da. Im Moment. Vollständig präsent — vielleicht zum ersten Mal seit Jahren. Genau das ist kein Zufall. Es ist das Design.
+      Jeder Tag folgt einer bewusst designten Energie-Kurve. Dein Körper wird gefordert — während sich dein Geist entspannt. Teilnehmer berichten, dass sie nach kurzer Zeit aufgehört haben, an Arbeit, Alltag oder Verpflichtungen zu denken. Sie waren einfach da. Im Moment. Vollständig präsent — vielleicht zum ersten Mal seit Jahren. Genau das ist das Design — durchdacht, erprobt, wirksam.
     </p>
     <p class="section-body" lang-en>
-      Every day follows a deliberately designed energy arc. Your body is challenged — while your mind unwinds. Participants report that after a short time, they stopped thinking about work, daily life or obligations. They were simply present. Fully in the moment — perhaps for the first time in years. That's not a coincidence. It's the design.
+      Every day follows a deliberately designed energy arc. Your body is challenged — while your mind unwinds. Participants report that after a short time, they stopped thinking about work, daily life or obligations. They were simply present. Fully in the moment — perhaps for the first time in years. That's by design — intentional, tested, effective.
     </p>
 
     <div class="rhythm-arc">
@@ -636,6 +658,166 @@
         <p lang-en><strong>Why meditation is not an afterthought here:</strong> Athletic activation raises cortisol and BDNF — the brain becomes open and malleable. Deep regeneration anchors the experience. But meditation completes the loop. Regular meditation practice measurably reduces chronic stress, improves sleep quality, sharpens focus and activates the parasympathetic nervous system — the counterpart to the constant tension of modern life. Alicja's guided evening meditations are not a mystical programme. They are a precise tool: down-regulate the body, organise thoughts, prepare for deep sleep.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ══ TRAINING SYSTEM ════════════════════════════════════════════════════════ -->
+<section style="background:#0d1e2a; padding: var(--section-pad) 0;" id="training">
+  <div class="container">
+
+    <!-- Header -->
+    <p class="section-label" style="color:var(--accent);" lang-de>Das Trainingssystem</p>
+    <p class="section-label" style="color:var(--accent);" lang-en>The Training System</p>
+    <h2 class="section-title" style="color:#fff; max-width:760px;" lang-de>
+      20 Jahre Erfahrung.<br><em>Wissenschaftlich fundiert. Auf dich zugeschnitten.</em>
+    </h2>
+    <h2 class="section-title" style="color:#fff; max-width:760px;" lang-en>
+      20 Years of Experience.<br><em>Science-backed. Built around you.</em>
+    </h2>
+    <p class="section-body" style="color:rgba(255,255,255,0.72); max-width:680px;" lang-de>
+      Das ThriveZone Trainingssystem trainiert nie eine Fähigkeit isoliert. Jede Einheit integriert alle 5 Kapazitäten — weil der Körper ein vernetztes Gesamtsystem ist. Das Ergebnis: Fortschritte, die sich im echten Leben zeigen.
+    </p>
+    <p class="section-body" style="color:rgba(255,255,255,0.72); max-width:680px;" lang-en>
+      The ThriveZone system never trains one capacity in isolation. Every session integrates all 5 — because the body is one interconnected system. The result: progress that shows up in real life.
+    </p>
+
+    <!-- 5 Capacities Visual -->
+    <div class="capacity-grid" style="margin: 52px 0 20px; display:grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap:10px;">
+
+      <!-- Strength - primary, accent highlight -->
+      <div style="background:var(--accent); border-radius:12px; padding:28px 18px; text-align:center; position:relative;">
+        <div style="font-size:32px; margin-bottom:10px;">💪</div>
+        <div style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(10,18,28,0.7); margin-bottom:6px;" lang-de>PRIMÄR</div>
+        <div style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(10,18,28,0.7); margin-bottom:6px;" lang-en>PRIMARY</div>
+        <div style="font-size:18px; font-weight:800; color:#0a121c; margin-bottom:8px;" lang-de>Kraft</div>
+        <div style="font-size:18px; font-weight:800; color:#0a121c; margin-bottom:8px;" lang-en>Strength</div>
+        <div style="font-size:12px; color:rgba(10,18,28,0.75); line-height:1.5;" lang-de>Das Fundament. Ohne Kraft sind alle anderen Kapazitäten limitiert.</div>
+        <div style="font-size:12px; color:rgba(10,18,28,0.75); line-height:1.5;" lang-en>The foundation. Without strength, every other capacity is capped.</div>
+      </div>
+
+      <!-- Mobility -->
+      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:28px 18px; text-align:center;">
+        <div style="font-size:32px; margin-bottom:10px;">🔄</div>
+        <div style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:6px;" lang-de>KAPAZITÄT 2</div>
+        <div style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:6px;" lang-en>CAPACITY 2</div>
+        <div style="font-size:18px; font-weight:800; color:#fff; margin-bottom:8px;" lang-de>Beweglichkeit</div>
+        <div style="font-size:18px; font-weight:800; color:#fff; margin-bottom:8px;" lang-en>Mobility</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.6); line-height:1.5;" lang-de>Voller Bewegungsumfang. Gelenkgesundheit. Haltung ohne Schmerz.</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.6); line-height:1.5;" lang-en>Full range of motion. Joint health. Posture without pain.</div>
+      </div>
+
+      <!-- Stability -->
+      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:28px 18px; text-align:center;">
+        <div style="font-size:32px; margin-bottom:10px;">⚖️</div>
+        <div style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:6px;" lang-de>KAPAZITÄT 3</div>
+        <div style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:6px;" lang-en>CAPACITY 3</div>
+        <div style="font-size:18px; font-weight:800; color:#fff; margin-bottom:8px;" lang-de>Stabilität</div>
+        <div style="font-size:18px; font-weight:800; color:#fff; margin-bottom:8px;" lang-en>Stability</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.6); line-height:1.5;" lang-de>Bewegung kontrollieren. Core-Integrität. Verletzungen verhindern.</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.6); line-height:1.5;" lang-en>Control movement. Core integrity. Prevent injuries before they start.</div>
+      </div>
+
+      <!-- Endurance -->
+      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:28px 18px; text-align:center;">
+        <div style="font-size:32px; margin-bottom:10px;">❤️</div>
+        <div style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:6px;" lang-de>KAPAZITÄT 4</div>
+        <div style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:6px;" lang-en>CAPACITY 4</div>
+        <div style="font-size:18px; font-weight:800; color:#fff; margin-bottom:8px;" lang-de>Ausdauer</div>
+        <div style="font-size:18px; font-weight:800; color:#fff; margin-bottom:8px;" lang-en>Endurance</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.6); line-height:1.5;" lang-de>Eigene Intervalleinheiten + natürliche Integration via Laufen, MTB, Klettern.</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.6); line-height:1.5;" lang-en>Dedicated interval sessions + natural integration through running, MTB, climbing.</div>
+      </div>
+
+      <!-- Power -->
+      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:28px 18px; text-align:center;">
+        <div style="font-size:32px; margin-bottom:10px;">⚡</div>
+        <div style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:6px;" lang-de>KAPAZITÄT 5</div>
+        <div style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:6px;" lang-en>CAPACITY 5</div>
+        <div style="font-size:18px; font-weight:800; color:#fff; margin-bottom:8px;" lang-de>Explosivkraft</div>
+        <div style="font-size:18px; font-weight:800; color:#fff; margin-bottom:8px;" lang-en>Power</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.6); line-height:1.5;" lang-de>Schnelle Kraft. Reaktivität. Athletik im Alltag.</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.6); line-height:1.5;" lang-en>Speed strength. Reactivity. Athletic capacity for real life.</div>
+      </div>
+    </div>
+
+    <!-- Integrated principle callout -->
+    <div style="background:rgba(255,165,60,0.08); border:1px solid rgba(255,165,60,0.25); border-radius:12px; padding:20px 28px; margin: 10px 0 52px; display:flex; align-items:center; gap:16px;">
+      <div style="font-size:22px;">🔗</div>
+      <div>
+        <span style="color:var(--accent); font-weight:700; font-size:14px;" lang-de>Gezielt — und im Zusammenspiel.</span>
+        <span style="color:var(--accent); font-weight:700; font-size:14px;" lang-en>Focused — and connected.</span>
+        <span style="color:rgba(255,255,255,0.7); font-size:14px;" lang-de> Kraft-, Mobility- und Intervalleinheiten haben jeweils ihren eigenen Fokus. Beim Retreat fügen sich alle 5 Kapazitäten zu einem Gesamtsystem zusammen — aufeinander abgestimmt, sinnvoll sequenziert.</span>
+        <span style="color:rgba(255,255,255,0.7); font-size:14px;" lang-en> Strength, mobility, and interval sessions each have their own focus. At the retreat, all 5 capacities come together as one system — coordinated, intelligently sequenced.</span>
+      </div>
+    </div>
+
+    <!-- Training Photos Strip -->
+    <div class="training-photo-strip" style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:6px; border-radius:12px; overflow:hidden; margin-bottom:52px; height:380px;">
+      <div style="overflow:hidden;">
+        <img src="./images/training_side_plank.jpg" alt="Side Plank Coaching" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div style="overflow:hidden;">
+        <img src="./images/training_trx_asrar.jpg" alt="TRX Bewegungsanalyse" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div style="overflow:hidden;">
+        <img src="./images/training_pushup_pool.jpg" alt="Push-Up am Pool" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+    </div>
+
+    <!-- Deep Dives -->
+    <p class="section-label" style="color:var(--accent); margin-bottom:12px;" lang-de>Was wir trainieren</p>
+    <p class="section-label" style="color:var(--accent); margin-bottom:12px;" lang-en>What we train</p>
+    <h3 style="color:#fff; font-size:clamp(1.4rem,2.5vw,2rem); font-weight:700; margin-bottom:8px; max-width:600px;" lang-de>Deep Dives in die Trainingsformen, die wirklich wirken.</h3>
+    <h3 style="color:#fff; font-size:clamp(1.4rem,2.5vw,2rem); font-weight:700; margin-bottom:8px; max-width:600px;" lang-en>Deep dives into the training methods that actually work.</h3>
+    <p class="section-body" style="color:rgba(255,255,255,0.65); margin-bottom:36px;" lang-de>20 Jahre Erfahrung destilliert — Methoden, die du direkt in deinen Alltag mitnimmst.</p>
+    <p class="section-body" style="color:rgba(255,255,255,0.65); margin-bottom:36px;" lang-en>20 years distilled — methods you take straight into your everyday life.</p>
+
+    <div class="deepdive-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:24px;">
+        <div style="width:44px;height:44px;background:rgba(255,165,60,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px;">🦴</div>
+        <h4 style="color:#fff; font-size:17px; font-weight:700; margin-bottom:6px;" lang-de>Gelenke, die sich frei bewegen</h4>
+        <h4 style="color:#fff; font-size:17px; font-weight:700; margin-bottom:6px;" lang-en>Joints that move freely</h4>
+        <p style="color:rgba(255,255,255,0.6); font-size:13.5px; line-height:1.55;" lang-de>Mobilität gepaart mit Stabilität und Kraft — kein loses Gelenk, kein steifes. Volle Bewegungsfreiheit, die hält.</p>
+        <p style="color:rgba(255,255,255,0.6); font-size:13.5px; line-height:1.55;" lang-en>Mobility paired with stability and strength — no loose joint, no stiff one. Full freedom of movement that lasts.</p>
+      </div>
+
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:24px;">
+        <div style="width:44px;height:44px;background:rgba(255,165,60,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px;">🏗️</div>
+        <h4 style="color:#fff; font-size:17px; font-weight:700; margin-bottom:6px;" lang-de>Ein Körper, der trägt — und nicht bricht</h4>
+        <h4 style="color:#fff; font-size:17px; font-weight:700; margin-bottom:6px;" lang-en>A body that carries — without breaking</h4>
+        <p style="color:rgba(255,255,255,0.6); font-size:13.5px; line-height:1.55;" lang-de>Kraft und Kraftausdauer als Fundament. Belastbarkeit, die im Alltag, im Sport und im Alter spürbar bleibt.</p>
+        <p style="color:rgba(255,255,255,0.6); font-size:13.5px; line-height:1.55;" lang-en>Strength and strength endurance as the base. Resilience that stays with you in everyday life, sport, and age.</p>
+      </div>
+
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:24px;">
+        <div style="width:44px;height:44px;background:rgba(255,165,60,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px;">⚡</div>
+        <h4 style="color:#fff; font-size:17px; font-weight:700; margin-bottom:6px;" lang-de>Schnell wenn's drauf ankommt</h4>
+        <h4 style="color:#fff; font-size:17px; font-weight:700; margin-bottom:6px;" lang-en>Fast when it matters</h4>
+        <p style="color:rgba(255,255,255,0.6); font-size:13.5px; line-height:1.55;" lang-de>Schnellkräftige und reaktive Fähigkeiten im Zusammenspiel mit Ausdauer — Athletik, die sich anfühlt wie Leichtigkeit.</p>
+        <p style="color:rgba(255,255,255,0.6); font-size:13.5px; line-height:1.55;" lang-en>Speed-strength and reactive ability combined with endurance — athleticism that feels effortless.</p>
+      </div>
+
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:24px;">
+        <div style="width:44px;height:44px;background:rgba(255,165,60,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px;">🧍</div>
+        <h4 style="color:#fff; font-size:17px; font-weight:700; margin-bottom:6px;" lang-de>Haltung & Kontrolle im Alltag</h4>
+        <h4 style="color:#fff; font-size:17px; font-weight:700; margin-bottom:6px;" lang-en>Posture & control in daily life</h4>
+        <p style="color:rgba(255,255,255,0.6); font-size:13.5px; line-height:1.55;" lang-de>Methoden, die du sofort mitnimmst — für Schultern, Rücken, Hüfte. Kein Schmerz, aufrechte Haltung, mehr Körpergefühl.</p>
+        <p style="color:rgba(255,255,255,0.6); font-size:13.5px; line-height:1.55;" lang-en>Methods you take home immediately — for shoulders, back, hips. No pain, upright posture, better body awareness.</p>
+      </div>
+
+    </div>
+
+    <!-- Science badge -->
+    <div style="margin-top:40px; padding:22px 28px; border-top:1px solid rgba(255,255,255,0.08); display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+      <div style="font-size:13px; color:rgba(255,255,255,0.4); line-height:1.6; flex:1; min-width:280px;" lang-de>
+        🔬 <strong style="color:rgba(255,255,255,0.65);">Wissenschaftlich untermauert:</strong> Krafttraining reduziert Verletzungsrisiko um bis zu 50% (Lauersen et al., 2014) · Compound-Training maximiert Effizienz (Schoenfeld et al., 2020) · 2–3h/Woche genügen für signifikante Anpassungen
+      </div>
+      <div style="font-size:13px; color:rgba(255,255,255,0.4); line-height:1.6; flex:1; min-width:280px;" lang-en>
+        🔬 <strong style="color:rgba(255,255,255,0.65);">Science-backed:</strong> Strength training reduces injury risk by up to 50% (Lauersen et al., 2014) · Compound training maximizes efficiency (Schoenfeld et al., 2020) · 2–3h/week is enough for significant adaptation
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -728,13 +910,96 @@
   </div>
 </section>
 
-<!-- ══ PHOTO STRIP ════════════════════════════════════════════════════════════ -->
-<div class="photo-strip">
-  <img src="./images/villa_pool_golden.jpg" alt="Villa Pool Goldstunde" style="object-position: center 48%;">
-  <img src="./images/mallorca_coast.jpg" alt="Mallorca Küste" style="object-position: center 72%;">
-  <img src="./images/food_branding.jpg" alt="ThriveZone Ernährung" style="object-position: center 50%;">
-  <img src="./images/training_outdoor.jpg" alt="Outdoor Training" style="object-position: center 35%;">
-</div>
+
+<!-- ══ ERNÄHRUNG ══════════════════════════════════════════════════════════════ -->
+<section style="background: var(--sand); padding: var(--section-pad);" id="ernaehrung">
+  <div class="container">
+    <p class="section-label" style="color:var(--accent);" lang-de>Ernährung</p>
+    <p class="section-label" style="color:var(--accent);" lang-en>Nutrition</p>
+    <h2 class="section-title" style="color:var(--text-dark);" lang-de>Essen, das dich<br><em style="color:var(--accent);">wirklich nährt.</em></h2>
+    <h2 class="section-title" style="color:var(--text-dark);" lang-en>Food that<br><em style="color:var(--accent);">truly nourishes.</em></h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; margin-top:48px;">
+      <div>
+        <p style="font-size:17px; line-height:1.8; color:var(--text-mid);" lang-de>
+          Immersives Lernen funktioniert beim Training — und genauso bei der Ernährung. Was du beim Retreat täglich erlebst, kochst, schmeckst und verstehst, nimmst du nach Hause. Als gelebte Praxis. Als neue Art zu essen.
+        </p>
+        <p style="font-size:17px; line-height:1.8; color:var(--text-mid);" lang-en>
+          Immersive learning works for training — and just as well for nutrition. What you experience, cook, taste and understand at the retreat, you take home. As lived practice. A new way of eating.
+        </p>
+        <p style="font-size:17px; line-height:1.8; color:var(--text-mid); margin-top:20px;" lang-de>
+          Alle Mahlzeiten folgen dem ThriveZone Ernährungs-Coaching: nährstoffreich, proteinbetont für den Muskelaufbau, ballaststoffreich für Darm und Mikrobiom — und trotzdem so gut, dass du sie gerne kochst. Alicja zeigt wie.
+        </p>
+        <p style="font-size:17px; line-height:1.8; color:var(--text-mid); margin-top:20px;" lang-en>
+          Every meal follows ThriveZone nutrition coaching: nutrient-dense, protein-focused for muscle support, high in fibre for gut and microbiome — and good enough that you'll actually cook them at home. Alicja shows you how.
+        </p>
+
+        <!-- Feature pills -->
+        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:32px;">
+          <span style="background:var(--sand-card); color:var(--text-dark); padding:8px 16px; border-radius:20px; font-size:14px; font-weight:600;" lang-de>🌿 100% Bio & lokal</span>
+          <span style="background:var(--sand-card); color:var(--text-dark); padding:8px 16px; border-radius:20px; font-size:14px; font-weight:600;" lang-en>🌿 100% Organic & local</span>
+          <span style="background:var(--sand-card); color:var(--text-dark); padding:8px 16px; border-radius:20px; font-size:14px; font-weight:600;" lang-de>💪 Proteinreich</span>
+          <span style="background:var(--sand-card); color:var(--text-dark); padding:8px 16px; border-radius:20px; font-size:14px; font-weight:600;" lang-en>💪 Protein-rich</span>
+          <span style="background:var(--sand-card); color:var(--text-dark); padding:8px 16px; border-radius:20px; font-size:14px; font-weight:600;" lang-de>🌾 Ballaststoffreich</span>
+          <span style="background:var(--sand-card); color:var(--text-dark); padding:8px 16px; border-radius:20px; font-size:14px; font-weight:600;" lang-en>🌾 High-fibre</span>
+          <span style="background:var(--sand-card); color:var(--text-dark); padding:8px 16px; border-radius:20px; font-size:14px; font-weight:600;" lang-de>🍽️ All inclusive</span>
+          <span style="background:var(--sand-card); color:var(--text-dark); padding:8px 16px; border-radius:20px; font-size:14px; font-weight:600;" lang-en>🍽️ All inclusive</span>
+        </div>
+      </div>
+      <div style="height:480px; border-radius:16px; overflow:hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.12);">
+        <img src="./images/new_snack_table.jpg" alt="Live to Thrive Ernährung" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;">
+      </div>
+    </div>
+
+    <!-- Food photo grid -->
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; height:280px; margin-top:40px; border-radius:14px; overflow:hidden;">
+      <div style="overflow:hidden;">
+        <img src="./images/food_branding.jpg" alt="ThriveZone Mahlzeit" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div style="overflow:hidden;">
+        <img src="./images/food_table.jpg" alt="Frische Zutaten" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div style="overflow:hidden;">
+        <img src="./images/food_fresh_spread.jpg" alt="Frische Zutaten" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+    </div>
+
+    <!-- Alicja snack callout -->
+    <div style="background:var(--mid); border-radius:16px; padding:40px 48px; margin-top:48px; display:grid; grid-template-columns:auto 1fr; gap:32px; align-items:center;">
+      <div style="font-size:48px;">✨</div>
+      <div>
+        <p style="font-size:18px; font-weight:700; color:var(--white); margin-bottom:8px;" lang-de>Wie von unsichtbarer Hand — in Wirklichkeit von Alicja 😉</p>
+        <p style="font-size:18px; font-weight:700; color:var(--white); margin-bottom:8px;" lang-en>As if by invisible hands — in reality by Alicja 😉</p>
+        <p style="font-size:16px; color:rgba(255,255,255,0.7); line-height:1.7;" lang-de>Zwischen den Sessions stehen immer frische Snacks bereit: proteinreiche Nüsse und Samen, Früchte, Gemüsesticks. Keine leeren Kalorien. Nur Energie, die dich durch den Tag trägt.</p>
+        <p style="font-size:16px; color:rgba(255,255,255,0.7); line-height:1.7;" lang-en>Between sessions, fresh snacks are always ready: protein-rich nuts and seeds, fruit, vegetable sticks. No empty calories. Just energy that carries you through the day.</p>
+      </div>
+    </div>
+
+    <!-- Meal Planner callout -->
+    <div style="background: linear-gradient(135deg, var(--accent), #c94a10); border-radius:16px; padding:36px 48px; margin-top:16px; text-align:center;">
+      <p style="font-size:20px; font-weight:800; color:white; margin-bottom:10px;" lang-de>Alles, was du beim Retreat isst — gibt es danach als ThriveZone Meal Planner für zu Hause.</p>
+      <p style="font-size:20px; font-weight:800; color:white; margin-bottom:10px;" lang-en>Everything you eat at the retreat — available afterwards as the ThriveZone Meal Planner for home.</p>
+      <p style="font-size:15px; color:rgba(255,255,255,0.85);" lang-de>Rezepte, Nährwerte, Einkaufslisten. Das Retreat-Feeling bleibt.</p>
+      <p style="font-size:15px; color:rgba(255,255,255,0.85);" lang-en>Recipes, nutritional values, shopping lists. The retreat feeling stays.</p>
+    </div>
+
+    <!-- Testimonials -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:48px;">
+      <div style="background:white; border-radius:14px; padding:36px; box-shadow:0 4px 24px rgba(0,0,0,0.07);">
+        <p style="font-size:32px; color:var(--accent); line-height:1; margin-bottom:16px;">"</p>
+        <p style="font-size:16px; line-height:1.7; color:var(--text-dark); font-style:italic;" lang-de>Andreas' Kraftstulle ist so ein genial einfaches Rezept, dass ich es seit dem Retreat regelmäßig zum Frühstück esse — wenn ich eiweißreich und ballaststoffreich in den Tag starten will.</p>
+        <p style="font-size:16px; line-height:1.7; color:var(--text-dark); font-style:italic;" lang-en>Andreas' power bread is such a brilliantly simple recipe that I've been eating it regularly for breakfast since the retreat — whenever I want to start the day protein-rich and full of fibre.</p>
+        <p style="margin-top:20px; font-weight:700; color:var(--text-dark);">— Hannes</p>
+      </div>
+      <div style="background:white; border-radius:14px; padding:36px; box-shadow:0 4px 24px rgba(0,0,0,0.07);">
+        <p style="font-size:32px; color:var(--accent); line-height:1; margin-bottom:16px;">"</p>
+        <p style="font-size:16px; line-height:1.7; color:var(--text-dark); font-style:italic;" lang-de>Wir haben Alicjas proteinreiche Curry-Suppe erfolgreich zu Hause nachgekocht — und haben so ein bisschen Retreat-Feeling nach Hause geholt.</p>
+        <p style="font-size:16px; line-height:1.7; color:var(--text-dark); font-style:italic;" lang-en>We successfully cooked Alicja's protein-rich curry soup at home — and brought a little bit of the retreat feeling back with us.</p>
+        <p style="margin-top:20px; font-weight:700; color:var(--text-dark);">— Mirko</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══ TRANSFORMATION ════════════════════════════════════════════════════════ -->
 <section class="transform" id="transformation">
@@ -742,14 +1007,14 @@
     <p class="section-label" lang-de>Was wirklich passiert</p>
     <p class="section-label" lang-en>What really happens</p>
 
-    <h2 class="section-title" lang-de>Nicht Urlaub.<br><em>Wendepunkt.</em></h2>
-    <h2 class="section-title" lang-en>Not a holiday.<br><em>A turning point.</em></h2>
+    <h2 class="section-title" lang-de>5 Tage.<br><em>Wendepunkt.</em></h2>
+    <h2 class="section-title" lang-en>5 Days.<br><em>A turning point.</em></h2>
 
     <p class="section-body" lang-de>
-      In 5 Tagen passiert mehr als in vielen Monaten alleine. Nicht weil wir dir etwas erklären — sondern weil du es erlebst. Struktur, Coach-Präsenz, Gleichgesinnte, Natur: All das zusammen erzeugt einen Kontext, der Veränderung nicht fordert, sondern ermöglicht.
+      In 5 Tagen passiert mehr als in vielen Monaten alleine — weil du es erlebst, statt es erklärt zu bekommen. Struktur, Coach-Präsenz, Gleichgesinnte, Natur: All das zusammen erzeugt einen Kontext, der Veränderung ermöglicht. Ohne Druck. Mit echter Wirkung.
     </p>
     <p class="section-body" lang-en>
-      In 5 days, more happens than in many months alone. Not because we explain things to you — but because you live them. Structure, coach presence, like-minded people, nature: together they create a context that doesn't demand change — it enables it.
+      In 5 days, more happens than in many months alone — because you live it, instead of just hearing about it. Structure, coach presence, like-minded people, nature: together they create a context that enables change. Without pressure. With real impact.
     </p>
 
     <div class="transform-grid">
@@ -759,12 +1024,7 @@
         <p lang-de>Wenn der erste Pull-Up gelingt. Wenn du eine Bergspitze erreichst, die du nicht für möglich gehalten hättest. Wenn du nach dem Abend-Training erschöpft und gleichzeitig lebendig bist — das sind keine Zufälle. Das ist der Beweis, dass du mehr kannst als gedacht.</p>
         <p lang-en>When the first pull-up happens. When you reach a summit you didn't think was possible. When you finish the evening session exhausted and alive at the same time — these aren't coincidences. They are proof that you're capable of more than you thought.</p>
       </div>
-      <div class="transform-card">
-        <div class="transform-moment" lang-de>„Ich hab aufgehört, Ernährung zu denken — und angefangen, sie zu leben."</div>
-        <div class="transform-moment" lang-en>"I stopped thinking about nutrition and started living it."</div>
-        <p lang-de>Wenn du mit Alicja kochst, verstehst du Ernährung nicht als Plan — sondern als Praxis. Frühstück ohne Hast. Mahlzeiten die sättigen und nicht belasten. Nicht Disziplin, sondern Genuss als Fundament. Was du hier täglich lebst, nimmst du nach Hause mit.</p>
-        <p lang-en>When you cook with Alicja, nutrition stops being a plan and becomes a practice. Breakfast without rush. Meals that satisfy without weighing you down. Not discipline, but enjoyment as the foundation. What you live daily here, you take home.</p>
-      </div>
+
       <div class="transform-card">
         <div class="transform-moment" lang-de>„Ich hab zum ersten Mal richtig abgeschaltet."</div>
         <div class="transform-moment" lang-en>"For the first time, I truly switched off."</div>
@@ -774,17 +1034,21 @@
       <div class="transform-card">
         <div class="transform-moment" lang-de>„Die Gruppe hat mich mitgezogen, ohne dass ich es gemerkt habe."</div>
         <div class="transform-moment" lang-en>"The group carried me forward without me even noticing."</div>
-        <p lang-de>Max. 8 Menschen. Keine Zuschauer, keine Wettbewerber. Alle wollen dasselbe: wachsen, lernen, sich spüren. In dieser Energie passiert etwas, das solo nicht möglich ist. Du gibst mehr, weil andere daneben geben.</p>
-        <p lang-en>Max. 8 people. No spectators, no competitors. Everyone wants the same thing: to grow, learn, feel themselves. In this energy, something happens that's not possible solo. You give more, because others give alongside you.</p>
+        <p lang-de>Max. 10 Menschen. Keine Zuschauer, keine Wettbewerber. Alle wollen dasselbe: wachsen, lernen, sich spüren. In dieser Energie passiert etwas, das solo nicht möglich ist. Du gibst mehr, weil andere daneben geben.</p>
+        <p lang-en>Max. 10 people. No spectators, no competitors. Everyone wants the same thing: to grow, learn, feel themselves. In this energy, something happens that's not possible solo. You give more, because others give alongside you.</p>
       </div>
     </div>
 
     <div class="transform-bottom">
       <p lang-de>
-        Das ThriveZone Framework basiert auf einer Grundüberzeugung: <strong>Wissen alleine verändert nicht. Erlebte Realität verändert.</strong> Diese 5 Tage sind keine Zusammenfassung von Theorie. Sie sind der Sprung in die Praxis — mit allem, was dazu gehört.
+        Das ThriveZone Framework ist das Ergebnis von über 20 Jahren Personal Training — entwickelt von Andreas, Diplom-Sportwissenschaftler und Coach von High-Profile-Klienten: Schauspielern, Künstlern und beruflich hocherfolgreichen Menschen, die echte Ergebnisse wollen.<br><br>
+        Im Retreat erlebst du durch Immersives Lernen die fünf Säulen des Frameworks: Training, Ernährung, Healthy Habits und Mindset — und wenn alles zusammenkommt, entsteht als emergentes Phänomen der Flow-Zustand. Der Moment, in dem alles optimal zusammenläuft.<br><br>
+        <strong>Gelebte Erfahrung verändert.</strong> Tief und dauerhaft. Du gehst als eine veränderte Version von dir nach Hause.
       </p>
       <p lang-en>
-        The ThriveZone Framework rests on one core belief: <strong>Knowledge alone doesn't create change. Lived experience does.</strong> These 5 days are not a summary of theory. They are the leap into practice — with everything that comes with it.
+        The ThriveZone Framework is the result of over 20 years of personal training — developed by Andreas, sports scientist and coach to high-profile clients: actors, artists, and professionally driven people who want real results.<br><br>
+        At the retreat, you experience the five pillars of the framework through immersive learning: training, nutrition, healthy habits, and mindset — and when everything comes together, the flow state emerges as a natural phenomenon. The moment where everything runs optimally.<br><br>
+        <strong>Lived experience creates lasting change.</strong> You go home as a different version of yourself.
       </p>
     </div>
   </div>
@@ -798,16 +1062,48 @@
     <h2 class="section-title" style="color:var(--text-dark);" lang-de>Echte Momente.<br><em style="color:var(--accent);">Echte Menschen.</em></h2>
     <h2 class="section-title" style="color:var(--text-dark);" lang-en>Real moments.<br><em style="color:var(--accent);">Real people.</em></h2>
   </div>
-  <!-- 5-image masonry grid -->
-  <div style="display:grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 240px 240px; gap:6px; margin-top:32px; max-width:1100px; margin-left:auto; margin-right:auto; border-radius:14px; overflow:hidden;">
-    <div style="grid-row: 1/3; overflow:hidden;">
-      <img src="./images/villa_activity.jpg" alt="Aktive Momente auf der Villa" style="width:100%;height:100%;object-fit:cover;object-position:center 22%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+  <!-- Reel CSS Slideshow -->
+  <style>
+    .reel-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation: reelFade 14s infinite;
+      transform: scale(1.0);
+    }
+    .reel-slide:nth-child(1) { background-image: url('./images/reel_01.jpg'); background-position: center 45%; animation-delay: 0s; }
+    .reel-slide:nth-child(2) { background-image: url('./images/reel_02.jpg'); background-position: center 55%; animation-delay: 2s; }
+    .reel-slide:nth-child(3) { background-image: url('./images/reel_03.jpg'); background-position: center 35%; animation-delay: 4s; }
+    .reel-slide:nth-child(4) { background-image: url('./images/reel_04.jpg'); background-position: center 40%; animation-delay: 6s; }
+    .reel-slide:nth-child(5) { background-image: url('./images/new_andreas_pool_welcome.jpg'); background-position: center 50%; animation-delay: 8s; }
+    .reel-slide:nth-child(6) { background-image: url('./images/new_pool_legs_relax.jpg'); background-position: center 45%; animation-delay: 10s; }
+    .reel-slide:nth-child(7) { background-image: url('./images/reel_07.jpg'); background-position: center 30%; animation-delay: 12s; }
+    @keyframes reelFade {
+      0%      { opacity: 0; transform: scale(1.0); }
+      2%      { opacity: 1; transform: scale(1.0); }
+      12%     { opacity: 1; transform: scale(1.1); }
+      14.28%  { opacity: 0; transform: scale(1.1); }
+      100%    { opacity: 0; transform: scale(1.1); }
+    }
+  </style>
+  <!-- 5-image masonry grid with inline slideshow -->
+  <div style="display:grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 240px 240px; gap:6px; margin-top:40px; max-width:1100px; margin-left:auto; margin-right:auto; border-radius:14px; overflow:hidden;">
+    <div style="grid-row: 1/3; overflow:hidden; position:relative;">
+      <div class="reel-slide"></div>
+      <div class="reel-slide"></div>
+      <div class="reel-slide"></div>
+      <div class="reel-slide"></div>
+      <div class="reel-slide"></div>
+      <div class="reel-slide"></div>
+      <div class="reel-slide"></div>
     </div>
     <div style="overflow:hidden;">
-      <img src="./images/mallorca_explore.jpg" alt="Mallorca erkunden" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="./images/group_drone.jpg" alt="Gruppe auf der Villa" style="width:100%;height:100%;object-fit:cover;object-position:center 55%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
     </div>
     <div style="overflow:hidden;">
-      <img src="./images/food_table.jpg" alt="Frische mediterrane Küche" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="./images/new_pool_laughing.jpg" alt="Gemeinschaft am Pool" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
     </div>
     <div style="overflow:hidden;">
       <img src="./images/villa_pool_night.jpg" alt="Pool bei Nacht" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
@@ -941,7 +1237,7 @@
       <div class="included-item"><div class="included-check">✓</div><span lang-de>Physiotherapie-Check mit Asrar</span><span lang-en>Physiotherapy check with Asrar</span></div>
       <div class="included-item"><div class="included-check">✓</div><span lang-de>Transfer auf Mallorca</span><span lang-en>Local transfer on Mallorca</span></div>
       <div class="included-item"><div class="included-check">✓</div><span lang-de>ThriveZone Rezeptbuch</span><span lang-en>ThriveZone recipe booklet</span></div>
-      <div class="included-item"><div class="included-check">✓</div><span lang-de>Exklusivität — max. 8 Teilnehmer</span><span lang-en>Exclusivity — max. 8 participants</span></div>
+      <div class="included-item"><div class="included-check">✓</div><span lang-de>Exklusivität — max. 10 Teilnehmer</span><span lang-en>Exclusivity — max. 10 participants</span></div>
     </div>
   </div>
 </section>
@@ -953,6 +1249,62 @@
     <p class="section-label" lang-en>Investment</p>
     <h2 class="section-title" lang-de>Dein <em>Platz</em> im Retreat</h2>
     <h2 class="section-title" lang-en>Your <em>Spot</em> in the Retreat</h2>
+
+    <!-- AVAILABILITY TICKER -->
+    <div style="margin: 0 auto 36px; max-width: 520px; text-align:center;">
+      <div style="display:flex; justify-content:center; gap:10px; margin-bottom:16px; flex-wrap:wrap;">
+        <!-- 3 booked -->
+        <div title="Gebucht" style="width:36px;height:36px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:16px;">✓</div>
+        <div title="Gebucht" style="width:36px;height:36px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:16px;">✓</div>
+        <div title="Gebucht" style="width:36px;height:36px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:16px;">✓</div>
+        <!-- 2 reserved -->
+        <div title="Reserviert" style="width:36px;height:36px;border-radius:50%;background:rgba(255,165,60,0.25);border:2px solid rgba(255,165,60,0.6);display:flex;align-items:center;justify-content:center;font-size:14px;color:rgba(255,165,60,0.9);">⏳</div>
+        <div title="Reserviert" style="width:36px;height:36px;border-radius:50%;background:rgba(255,165,60,0.25);border:2px solid rgba(255,165,60,0.6);display:flex;align-items:center;justify-content:center;font-size:14px;color:rgba(255,165,60,0.9);">⏳</div>
+        <!-- 5 free -->
+        <div style="width:36px;height:36px;border-radius:50%;border:2px solid rgba(255,255,255,0.25);animation:spotPulse 2s ease-in-out infinite;"></div>
+        <div style="width:36px;height:36px;border-radius:50%;border:2px solid rgba(255,255,255,0.25);animation:spotPulse 2s ease-in-out infinite 0.2s;"></div>
+        <div style="width:36px;height:36px;border-radius:50%;border:2px solid rgba(255,255,255,0.25);animation:spotPulse 2s ease-in-out infinite 0.4s;"></div>
+        <div style="width:36px;height:36px;border-radius:50%;border:2px solid rgba(255,255,255,0.25);animation:spotPulse 2s ease-in-out infinite 0.6s;"></div>
+        <div style="width:36px;height:36px;border-radius:50%;border:2px solid rgba(255,255,255,0.25);animation:spotPulse 2s ease-in-out infinite 0.8s;"></div>
+      </div>
+      <style>
+        @keyframes spotPulse {
+          0%, 100% { border-color: rgba(255,255,255,0.2); box-shadow: none; }
+          50% { border-color: rgba(255,165,60,0.7); box-shadow: 0 0 10px rgba(255,165,60,0.3); }
+        }
+      </style>
+      <div style="display:flex; justify-content:center; gap:20px; font-size:12.5px; color:#7a8fa0; margin-bottom:10px;">
+        <span lang-de>✓ 3 gebucht</span><span lang-en>✓ 3 booked</span>
+        <span lang-de>⏳ 2 reserviert</span><span lang-en>⏳ 2 reserved</span>
+        <span lang-de>○ 5 noch frei</span><span lang-en>○ 5 remaining</span>
+      </div>
+      <p style="font-size:13px; font-weight:600; color:var(--accent); margin:0;" lang-de>Noch 5 von 10 Plätzen verfügbar</p>
+      <p style="font-size:13px; font-weight:600; color:var(--accent); margin:0;" lang-en>5 of 10 spots still available</p>
+    </div>
+
+    <!-- ALL INCLUSIVE CALLOUT -->
+    <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,165,60,0.35); border-radius: 16px; padding: 28px 32px 22px; margin: 0 auto 44px; max-width: 780px;">
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px; justify-content:center;">
+        <div style="height:1px; flex:1; background:rgba(255,165,60,0.3);"></div>
+        <span style="font-size:11px; font-weight:700; letter-spacing:0.18em; color:var(--accent); text-transform:uppercase;" lang-de>All Inclusive — alles dabei</span>
+        <span style="font-size:11px; font-weight:700; letter-spacing:0.18em; color:var(--accent); text-transform:uppercase;" lang-en>All Inclusive — everything included</span>
+        <div style="height:1px; flex:1; background:rgba(255,165,60,0.3);"></div>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:10px 24px;">
+        <div style="display:flex; align-items:center; gap:8px; color:#d0d8e0; font-size:14px;"><span style="color:var(--accent); font-weight:700;">✓</span><span lang-de>4 Nächte Villa Can Paulo</span><span lang-en>4 nights at Villa Can Paulo</span></div>
+        <div style="display:flex; align-items:center; gap:8px; color:#d0d8e0; font-size:14px;"><span style="color:var(--accent); font-weight:700;">✓</span><span lang-de>3 Mahlzeiten täglich</span><span lang-en>3 meals daily</span></div>
+        <div style="display:flex; align-items:center; gap:8px; color:#d0d8e0; font-size:14px;"><span style="color:var(--accent); font-weight:700;">✓</span><span lang-de>2x tägl. Small-Group-Training</span><span lang-en>2x daily group training</span></div>
+        <div style="display:flex; align-items:center; gap:8px; color:#d0d8e0; font-size:14px;"><span style="color:var(--accent); font-weight:700;">✓</span><span lang-de>Tägliche Kochsessions mit Alicja</span><span lang-en>Daily cooking sessions with Alicja</span></div>
+        <div style="display:flex; align-items:center; gap:8px; color:#d0d8e0; font-size:14px;"><span style="color:var(--accent); font-weight:700;">✓</span><span lang-de>Mobility, Stretching &amp; Recovery</span><span lang-en>Mobility, stretching &amp; recovery</span></div>
+        <div style="display:flex; align-items:center; gap:8px; color:#d0d8e0; font-size:14px;"><span style="color:var(--accent); font-weight:700;">✓</span><span lang-de>Meditation &amp; Mindset-Einheiten</span><span lang-en>Meditation &amp; mindset sessions</span></div>
+        <div style="display:flex; align-items:center; gap:8px; color:#d0d8e0; font-size:14px;"><span style="color:var(--accent); font-weight:700;">✓</span><span lang-de>Physiotherapie-Check (Asrar)</span><span lang-en>Physio check (Asrar)</span></div>
+        <div style="display:flex; align-items:center; gap:8px; color:#d0d8e0; font-size:14px;"><span style="color:var(--accent); font-weight:700;">✓</span><span lang-de>Transfer auf Mallorca</span><span lang-en>Local transfer on Mallorca</span></div>
+        <div style="display:flex; align-items:center; gap:8px; color:#d0d8e0; font-size:14px;"><span style="color:var(--accent); font-weight:700;">✓</span><span lang-de>ThriveZone Rezeptbuch</span><span lang-en>ThriveZone recipe booklet</span></div>
+        <div style="display:flex; align-items:center; gap:8px; color:#d0d8e0; font-size:14px;"><span style="color:var(--accent); font-weight:700;">✓</span><span lang-de>Max. 10 Teilnehmer — exklusiv</span><span lang-en>Max. 10 participants — exclusive</span></div>
+      </div>
+      <p style="text-align:center; margin-top:18px; margin-bottom:0; font-size:12.5px; color:#7a8fa0;" lang-de>Nicht enthalten: Flug &amp; optionale Aktivitäten (Bootstour, MTB, Massage etc.)</p>
+      <p style="text-align:center; margin-top:18px; margin-bottom:0; font-size:12.5px; color:#7a8fa0;" lang-en>Not included: flights &amp; optional activities (boat trip, MTB, massage etc.)</p>
+    </div>
 
     <div class="pricing-cards">
       <div class="price-card featured">
@@ -1013,6 +1365,50 @@
   </div>
 </section>
 
+<!-- ══ FINAL GALLERY ══════════════════════════════════════════════════════════ -->
+<section style="background:#0d1e2a; padding: 70px 0 0 0;">
+  <div class="container" style="text-align:center; padding-bottom:40px;">
+    <p class="section-label" style="color:var(--accent);" lang-de>Echte Eindrücke</p>
+    <p class="section-label" style="color:var(--accent);" lang-en>Real Impressions</p>
+    <h2 class="section-title" lang-de>So sieht es aus.<br><em>Wenn es wirklich passiert.</em></h2>
+    <h2 class="section-title" lang-en>This is what it looks like.<br><em>When it actually happens.</em></h2>
+  </div>
+  <div style="
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 280px 280px;
+    gap: 4px;
+    width: 100%;
+  ">
+    <!-- row 1 -->
+    <div style="overflow:hidden;">
+      <img src="./images/training_outdoor.jpg" alt="Outdoor Training" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;">
+      <img src="./images/new_rock_climbing.jpg" alt="Rock Climbing" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;">
+      <img src="./images/new_mtb_viewpoint.jpg" alt="MTB Viewpoint" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;">
+      <img src="./images/villa_activity.jpg" alt="Villa Activity" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <!-- row 2 -->
+    <div style="overflow:hidden;">
+      <img src="./images/new_pool_laughing.jpg" alt="Gemeinschaft am Pool" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;">
+      <img src="./images/villa_group.jpg" alt="Gruppe" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;">
+      <img src="./images/new_andreas_pool_welcome.jpg" alt="Andreas am Pool" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;">
+      <img src="./images/activity_climbing.jpg" alt="Klettern Action" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+  </div>
+</section>
+
 <!-- ══ CTA ═════════════════════════════════════════════════════════════════════ -->
 <section class="cta-section" id="cta">
   <div class="container">
@@ -1020,8 +1416,8 @@
     <p class="section-label" lang-en>Ready?</p>
     <h2 class="section-title" lang-de>Dein <em>bestes Ich</em> wartet auf Mallorca.</h2>
     <h2 class="section-title" lang-en>Your <em>best self</em> is waiting in Mallorca.</h2>
-    <p class="section-body" lang-de>Plätze sind limitiert auf 8 Personen. Wenn du dabei sein möchtest, melde dich jetzt — bevor jemand anderes deinen Platz nimmt.</p>
-    <p class="section-body" lang-en>Places are limited to 8 people. If you want to join, reach out now — before someone else takes your spot.</p>
+    <p class="section-body" lang-de>Max. 10 Teilnehmer — bewusst klein gehalten. Wenn du dabei sein möchtest, melde dich jetzt und sichere dir deinen Platz.</p>
+    <p class="section-body" lang-en>Max. 10 participants — intentionally kept small. If you want to be part of it, reach out now and secure your spot.</p>
     <div class="hero-cta" style="margin-top:36px">
       <a href="mailto:andreas@heumann-personaltraining.berlin" class="btn btn-primary" lang-de>Jetzt Platz sichern</a>
       <a href="mailto:andreas@heumann-personaltraining.berlin" class="btn btn-primary" lang-en>Secure your spot now</a>
